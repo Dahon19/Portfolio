@@ -11,9 +11,30 @@
       content="Professional Information Technology Portfolio of Rod Allen B. Agregado."
     />
     <title>Professional Information Technology Portfolio</title>
+    <script>
+      (function () {
+        const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+        if (!isLocalHost) {
+          const stylesheet = document.createElement("link");
+          stylesheet.rel = "stylesheet";
+          stylesheet.href = "/Portfolio/assets/app.css";
+          document.head.appendChild(stylesheet);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module">
+      const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      if (isLocalHost) {
+        import("/src/main.jsx");
+      } else {
+        const productionEntry = "/Portfolio/assets/app.js";
+        import(/* @vite-ignore */ productionEntry);
+      }
+    </script>
   </body>
-  </html>
+</html>
