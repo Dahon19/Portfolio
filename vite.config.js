@@ -6,9 +6,10 @@ export default defineConfig({
   build: {
     assetsDir: "assets",
     rollupOptions: {
+      external: ["/Portfolio/assets/main.js"],
       output: {
         entryFileNames: "assets/app.js",
-        chunkFileNames: "assets/[name]-[hash].js",
+        chunkFileNames: "assets/[name].js",
         assetFileNames: (assetInfo) => {
           if (assetInfo.name?.endsWith(".css")) {
             return "assets/app.css";

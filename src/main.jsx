@@ -1,8 +1,10 @@
-const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./styles.css";
 
-if (isLocalHost) {
-  import("./app-entry.jsx");
-} else {
-  const productionEntry = "/Portfolio/assets/app.js";
-  import(/* @vite-ignore */ productionEntry);
-}
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
