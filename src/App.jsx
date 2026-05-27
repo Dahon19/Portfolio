@@ -159,6 +159,8 @@ const certificateIcons = {
   "Online Courses Taken": BookOpenText
 };
 
+const profileImageSrc = `${import.meta.env.BASE_URL}rod-allen-profile-clean.jpg`;
+
 function HeadsetIcon(props) {
   return <MonitorSmartphone {...props} />;
 }
@@ -359,10 +361,10 @@ function HomeSection({ typedRole, reducedMotion }) {
               <div className="hero-card__badge">Profile</div>
               <div className="hero-card__photo-frame">
                 <img
-                  src="/rod-allen-profile-clean.jpg"
-                  alt="Rod Allen B. Agregado portrait"
-                  className="hero-card__photo"
-                />
+                      src={profileImageSrc}
+                      alt="Rod Allen B. Agregado portrait"
+                      className="hero-card__photo"
+                    />
               </div>
             </div>
 

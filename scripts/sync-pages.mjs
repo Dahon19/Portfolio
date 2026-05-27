@@ -36,7 +36,7 @@ async function main() {
   const distEntries = await fs.readdir(distDir, { withFileTypes: true });
 
   for (const entry of distEntries) {
-    if (entry.isDirectory() || entry.name === "index.html") {
+    if (entry.isDirectory()) {
       continue;
     }
 
