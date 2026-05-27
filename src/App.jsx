@@ -40,6 +40,7 @@ import {
   SiTypescript,
   SiVite
 } from "react-icons/si";
+import profileImageSrc from "./assets/rod-allen-profile-web.jpg";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { SectionHeading } from "./components/SectionHeading";
@@ -158,8 +159,6 @@ const certificateIcons = {
   "Webinars / Seminars Attended": GraduationCap,
   "Online Courses Taken": BookOpenText
 };
-
-const profileImageSrc = `${import.meta.env.BASE_URL}rod-allen-profile-clean.jpg`;
 
 function HeadsetIcon(props) {
   return <MonitorSmartphone {...props} />;
