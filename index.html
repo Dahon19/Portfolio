@@ -8,9 +8,12 @@
     />
     <meta
       name="description"
-      content="Professional Information Technology Portfolio of Rod Allen B. Agregado."
+      content="Rod Allen B. Agregado portfolio for IT instruction, technical support, and software development."
     />
-    <title>Professional Information Technology Portfolio</title>
+    <title>Rod Allen B. Agregado | IT Portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
     <script>
       (function () {
         const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
@@ -18,21 +21,19 @@
         if (!isLocalHost) {
           const stylesheet = document.createElement("link");
           stylesheet.rel = "stylesheet";
-          stylesheet.href = "/Portfolio/assets/app-entry-2pSaNgVX.css?v=20260528-main";
+          stylesheet.href = "/Portfolio/assets/index-wPSjIuRx.css?v=20260528-ui";
           document.head.appendChild(stylesheet);
         }
       })();
     </script>
-  </head>
-  <body>
-    <div id="root"></div>
     <script type="module">
       const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+      const loadModule = new Function("path", "return import(path)");
 
       if (isLocalHost) {
-        import("/src/app-entry.jsx");
+        loadModule("/src/app-entry.jsx");
       } else {
-        import("/Portfolio/assets/app-entry-Bo7LUriQ.js?v=20260528-inline");
+        loadModule("/Portfolio/assets/index-BPl7I4g-.js?v=20260528-ui");
       }
     </script>
   </body>

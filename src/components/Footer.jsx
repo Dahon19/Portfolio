@@ -3,10 +3,10 @@ export function Footer() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <div>
-          <p>Rod Allen Portfolio</p>
-          <small>Professional Information Technology Portfolio</small>
+          <p>Rod Allen B. Agregado</p>
+          <small>IT systems, support, and instruction.</small>
         </div>
-        <small>Positioned for instruction, support, and software opportunities.</small>
+        <small>Available for teaching, support, and junior software roles.</small>
       </div>
     </footer>
   );

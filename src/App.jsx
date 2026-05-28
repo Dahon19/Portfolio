@@ -317,11 +317,11 @@ function HomeSection({ typedRole, reducedMotion }) {
       <div className="hero__container container">
         <div className="hero__grid">
           <div className="hero__copy" data-reveal>
-            <span className="hero__eyebrow">Professional Information Technology Portfolio</span>
-            <p className="hero__kicker">Luxury presentation for software engineering, IT instruction, and systems work</p>
+            <span className="hero__eyebrow">Software + IT Instruction</span>
+            <p className="hero__kicker">Systems, support, and classroom-ready technical communication</p>
             <h1 className="hero__title">{portfolioData.profile.name}</h1>
             <p className="hero__role">
-              <span className="hero__role-static">Fresh Graduate</span>
+              <span className="hero__role-static">BSIT Graduate</span>
               <span className="hero__role-divider">|</span>
               <span className="hero__typewriter" aria-live="polite">
                 {typedRole}
@@ -331,9 +331,9 @@ function HomeSection({ typedRole, reducedMotion }) {
             <p className="hero__description">{portfolioData.profile.intro}</p>
 
             <div className="hero__meta-list" aria-label="Primary value areas">
-              <span>System Development</span>
-              <span>Technical Support</span>
-              <span>IT Instruction</span>
+              <span>Systems</span>
+              <span>Support</span>
+              <span>Instruction</span>
             </div>
 
             <div className="hero__actions">
@@ -379,7 +379,7 @@ function HomeSection({ typedRole, reducedMotion }) {
               <div className="hero-card__identity">
                 <div className="hero-card__avatar">RA</div>
                 <div>
-                  <strong>Fresh Graduate</strong>
+                  <strong>Current Focus</strong>
                   <span>System development and technical support</span>
                 </div>
               </div>
@@ -389,7 +389,7 @@ function HomeSection({ typedRole, reducedMotion }) {
                 ))}
               </div>
               <p className="hero-card__note">
-                Built to present practical development capability, instructional potential, and recruiter-ready clarity.
+                Focused on useful, maintainable systems that are easy for users to understand.
               </p>
             </div>
           </aside>
@@ -405,8 +405,8 @@ function AboutSection() {
       <div className="container">
         <SectionHeading
           eyebrow="About"
-          title="Grounded in practical IT work, support, and systems thinking"
-          subtitle="A profile shaped by academic projects, internship exposure, technical troubleshooting, and an interest in clear, useful software."
+          title="Practical IT work with clear systems thinking"
+          subtitle="Academic projects, internship exposure, troubleshooting, and useful software."
           align="left"
         />
 
@@ -448,7 +448,7 @@ function SkillsSection() {
         <SectionHeading
           eyebrow="Skills"
           title="A balanced foundation across development, support, and instruction"
-          subtitle="Organized by capability area to reflect both technical execution and classroom-ready communication."
+          subtitle="Grouped by capability area for quick technical review."
         />
 
         <div className="skills__grid">
@@ -518,7 +518,7 @@ function ProjectsSection() {
         <SectionHeading
           eyebrow="Projects"
           title="Selected systems and technical builds"
-          subtitle="Each project is presented as a concise, public-safe summary with technologies, features, and contribution scope."
+          subtitle="Concise summaries with technologies, features, and contribution scope."
           align="left"
         />
 
@@ -593,15 +593,15 @@ function ContactSection() {
             <article className="contact-card" data-reveal style={{ "--delay": "120ms" }}>
               <GraduationCap size={20} />
               <div>
-                <h3>Best fit roles</h3>
+                <h3>Open roles</h3>
                 <p>IT instructor, technical support, system development, and entry-level software roles.</p>
               </div>
             </article>
             <article className="contact-card" data-reveal style={{ "--delay": "180ms" }}>
               <ArrowRight size={20} />
               <div>
-                <h3>Portfolio objective</h3>
-                <p>A clear, polished showcase for interviews, faculty applications, and junior software opportunities.</p>
+                <h3>Working style</h3>
+                <p>Structured, user-focused, and practical with clear documentation.</p>
               </div>
             </article>
           </div>

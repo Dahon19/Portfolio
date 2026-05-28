@@ -1,14 +1,14 @@
 export const portfolioData = {
   profile: {
     name: "Rod Allen B. Agregado",
-    title: "Fresh Graduate Information Technology",
+    title: "Information Technology Graduate",
     shortTitle: "IT Graduate | System Developer | Technical Support Learner",
     tagline:
-      "Professional Information Technology Portfolio focused on system development, technical support, computer fundamentals, and practical web solutions.",
+      "System development, support, and practical web solutions.",
     intro:
-      "Fresh graduate in Information Technology with a strong foundation in computer fundamentals, hardware troubleshooting, software applications, technical support, and basic web development. I build practical systems that solve real workflow problems and support everyday operations.",
+      "Information Technology graduate with a foundation in computer fundamentals, hardware troubleshooting, software applications, user support, and web development. I build practical systems for real workflow problems.",
     about:
-      "I am a knowledgeable and dedicated Information Technology graduate with hands-on experience in system maintenance, hardware support, troubleshooting, and web-based development. My background combines programming, technical support, digital tools, and practical project work shaped by academic training, internship exposure, competitions, and continuous learning through seminars and online courses. I am especially interested in building useful systems, supporting users, and applying technology in a practical and organized way.",
+      "I am an Information Technology graduate with hands-on experience in system maintenance, hardware support, troubleshooting, and web-based development. My background combines programming, digital tools, academic projects, internship exposure, competitions, seminars, and online courses. I am especially interested in building useful systems and helping users apply technology in an organized way.",
     focusAreas: [
       "System development",
       "Technical support",
@@ -21,9 +21,9 @@ export const portfolioData = {
     ]
   },
   stats: [
-    { label: "Selected Projects", value: "7" },
-    { label: "Certificate Entries", value: "18" },
-    { label: "Primary Focus", value: "IT Systems" }
+    { label: "Projects", value: "7" },
+    { label: "Learning Records", value: "18" },
+    { label: "Focus", value: "IT Systems" }
   ],
   skills: [
     {
@@ -74,7 +74,7 @@ export const portfolioData = {
       ],
       contribution:
         "Implemented and organized the full-stack application structure, dashboard experience, and module-level workflows for a healthcare inventory use case.",
-      reference: "Local project summary only"
+      reference: "Project summary"
     },
     {
       slug: "hrms",
@@ -94,7 +94,7 @@ export const portfolioData = {
       ],
       contribution:
         "Developed and refined HR workflows, attendance experiences, and module integrations for a broad administrative system.",
-      reference: "Local project summary only"
+      reference: "Project summary"
     },
     {
       slug: "edu-web",
@@ -114,7 +114,7 @@ export const portfolioData = {
       ],
       contribution:
         "Built and maintained the CMS structure, public page rendering, and admin-side content management flows.",
-      reference: "Local project summary only"
+      reference: "Project summary"
     },
     {
       slug: "interna",
@@ -134,7 +134,7 @@ export const portfolioData = {
       ],
       contribution:
         "Created the app structure and time-management workflow with a mobile-first experience for internship documentation.",
-      reference: "Local project summary only"
+      reference: "Project summary"
     },
     {
       slug: "project-studio",
@@ -154,7 +154,7 @@ export const portfolioData = {
       ],
       contribution:
         "Designed the orchestration workflow and supporting interface for local AI-assisted Flutter project generation.",
-      reference: "Local project summary only"
+      reference: "Project summary"
     },
     {
       slug: "bacmatic",
@@ -173,7 +173,7 @@ export const portfolioData = {
       ],
       contribution:
         "Developed the academic capstone solution and worked on the hardware-software setup for monitoring use.",
-      reference: "Resume project summary"
+      reference: "Academic project"
     },
     {
       slug: "u-turn",
@@ -192,7 +192,7 @@ export const portfolioData = {
       ],
       contribution:
         "Handled the development setup and implementation support for the embedded project workflow.",
-      reference: "Resume project summary"
+      reference: "Client project"
     }
   ],
   certificates: [
@@ -309,7 +309,7 @@ export const portfolioData = {
     education: [
       {
         title: "Bachelor of Science in Information Technology",
-        subtitle: "Fresh Graduate",
+        subtitle: "BSIT Graduate",
         detail:
           "Northeastern College, 2022 to 2026. Academic achievements include Cum Laude, Outstanding On-the-Job Trainee, and Multimedia Artist of the Year."
       }
@@ -349,8 +349,7 @@ export const portfolioData = {
     ]
   },
   contact: {
-    heading: "Contact Me",
     note:
-      "Private contact details are intentionally excluded from this public-safe build. Please reach out through the application channel, recruiter contact path, or a resume request."
+      "Private contact details are intentionally excluded from this public version. Please reach out through the application channel, recruiter contact path, or a resume request."
   }
 };
