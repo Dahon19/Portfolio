@@ -26,6 +26,14 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./src/main.jsx"></script>
+    <script type="module">
+      const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      if (isLocalHost) {
+        import("/src/app-entry.jsx");
+      } else {
+        import("/Portfolio/assets/app-entry-Bo7LUriQ.js?v=20260528-inline");
+      }
+    </script>
   </body>
 </html>
