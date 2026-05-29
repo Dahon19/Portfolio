@@ -30,7 +30,7 @@ export const portfolioData = {
   },
   stats: [
     { label: "Projects", value: "7" },
-    { label: "Learning Records", value: "41" },
+    { label: "Learning Records", value: "40" },
     { label: "Focus", value: "IT Systems" }
   ],
   skills: [
@@ -204,13 +204,6 @@ export const portfolioData = {
     }
   ],
   certificates: [
-    {
-      title: "Computer Systems Servicing",
-      date: "July 3, 2024",
-      type: "Certifications / Trainings",
-      location: "TESDA",
-      preview: certificatePreview("computer-systems-servicing.webp")
-    },
     {
       title: "Smart Moves: How AI Can Power Your Studies, Work, and Future",
       date: "December 17, 2025",
