@@ -834,6 +834,7 @@ textarea {
 
 .skills__grid {
   align-items: stretch;
+  grid-auto-rows: 1fr;
 }
 
 .skill-card,
@@ -867,10 +868,11 @@ textarea {
 
 .skill-card {
   position: relative;
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-  padding: 1.65rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: clamp(20rem, 23vw, 23.5rem);
+  height: 100%;
+  padding: 1.45rem;
   border-radius: var(--radius-lg);
   background:
     radial-gradient(circle at top right, rgba(198, 157, 84, 0.08), transparent 45%),
@@ -902,9 +904,10 @@ textarea {
 
 .skill-card__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.9rem;
-  margin-bottom: 1rem;
+  min-height: 3.2rem;
+  margin-bottom: 1.05rem;
 }
 
 .skill-card__icon,
@@ -940,29 +943,33 @@ textarea {
 .timeline-item__content h3 {
   color: var(--heading-dark);
   font-size: 1.55rem;
+  line-height: 1.05;
   letter-spacing: 0;
 }
 
 .skill-card__items {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 0.75rem;
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr));
+  align-content: start;
+  gap: 0.68rem;
+  min-height: 0;
 }
 
 .skill-card__item {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr);
   align-items: center;
   gap: 0.48rem;
   min-width: 0;
-  padding: 0.65rem 0.84rem;
-  border-radius: 999px;
+  min-height: 2.9rem;
+  padding: 0.62rem 0.76rem;
+  border-radius: 0.95rem;
   border: 1px solid rgba(70, 54, 30, 0.08);
   background: #f7f1e6;
   color: var(--text-dark);
   font-size: 0.89rem;
   font-weight: 700;
+  line-height: 1.22;
   transition:
     transform 200ms ease,
     box-shadow 200ms ease,
@@ -979,7 +986,13 @@ textarea {
 .stack-chip__icon {
   display: inline-grid;
   place-items: center;
+  flex: 0 0 auto;
   color: var(--accent-strong);
+}
+
+.skill-card__item-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .skill-card__item-icon svg,
@@ -1818,6 +1831,18 @@ textarea {
   .skills__grid,
   .projects__grid {
     grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    min-height: auto;
+  }
+
+  .skill-card__header {
+    min-height: 0;
+  }
+
+  .skill-card__items {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
   }
 
   .hero__stats {

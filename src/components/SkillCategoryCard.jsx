@@ -15,7 +15,7 @@ export function SkillCategoryCard({ icon: Icon, title, items, getItemIcon, delay
             <span className="skill-card__item-icon" aria-hidden="true">
               {getItemIcon ? getItemIcon(item) : <BadgeCheck size={14} />}
             </span>
-            <span>{item}</span>
+            <span className="skill-card__item-label">{item}</span>
           </div>
         ))}
       </div>
