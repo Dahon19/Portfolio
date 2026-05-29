@@ -29,7 +29,7 @@ export const portfolioData = {
     ]
   },
   stats: [
-    { label: "Projects", value: "7" },
+    { label: "Projects", value: "5" },
     { label: "Learning Records", value: "50" },
     { label: "Focus", value: "IT Systems" }
   ],
@@ -64,26 +64,6 @@ export const portfolioData = {
     }
   ],
   projects: [
-    {
-      slug: "mhis",
-      title: "Medical Hospital Inventory System",
-      category: "Inventory and Operations System",
-      description:
-        "A hospital inventory platform designed to manage medical supply requests, stock movements, batch monitoring, and reporting for organized inventory operations.",
-      techStack: {
-        languages: ["PHP", "JavaScript", "SQL"],
-        tools: ["Laravel", "React", "Inertia.js", "Tailwind CSS", "MySQL"]
-      },
-      features: [
-        "FEFO inventory logic for expiration-aware stock release",
-        "Role-based workflows for administrators and department staff",
-        "Request approval and release tracking",
-        "Inventory alerts, reports, and audit-style visibility"
-      ],
-      contribution:
-        "Implemented and organized the full-stack application structure, dashboard experience, and module-level workflows for a healthcare inventory use case.",
-      reference: "Project summary"
-    },
     {
       slug: "hrms",
       title: "HRSync: Human Resource Management System",
@@ -142,26 +122,6 @@ export const portfolioData = {
       ],
       contribution:
         "Created the app structure and time-management workflow with a mobile-first experience for internship documentation.",
-      reference: "Project summary"
-    },
-    {
-      slug: "project-studio",
-      title: "Mobile App Project Studio",
-      category: "Developer Tooling and Automation",
-      description:
-        "A local automation studio that scaffolds and improves Flutter projects through a multi-agent workflow with validation, run tracking, and a web dashboard.",
-      techStack: {
-        languages: ["Python", "JavaScript", "TypeScript"],
-        tools: ["Flask", "React", "Vite", "Flutter", "Local model integration"]
-      },
-      features: [
-        "Prompt-based Flutter project creation and improvement",
-        "Project run history and orchestration tracking",
-        "Validation pipeline and runtime controls",
-        "GUI explorer for generated projects"
-      ],
-      contribution:
-        "Designed the orchestration workflow and supporting interface for local AI-assisted Flutter project generation.",
       reference: "Project summary"
     },
     {
