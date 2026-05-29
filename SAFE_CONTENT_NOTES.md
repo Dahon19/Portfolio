@@ -34,8 +34,8 @@ This portfolio was prepared as a public-safe build based on local `SysProjects` 
 - Certificate entries were summarized from the Drive folder inventory and readable certificate text where available
 - Certificate previews were cropped, resized, lightly blurred, and masked to hide certificate identifiers, QR codes, verification links, and signature areas
 - Raw Drive files are not published in the portfolio
-- The public portfolio now includes 41 relevant learning records from Trainings, Webinars, and Courses
-- Badge-only duplicates were not published as separate certificate records
+- The public portfolio now includes all 50 visible records from the connected Drive certificate folders, including Trainings, Webinars, Courses, Badges, and shortcut-only entries
+- Shortcut-only entries are included as text records when no downloadable certificate file is exposed by Drive
 - Categories were normalized into:
   - Seminars/Webinars
   - Online Courses/Trainings

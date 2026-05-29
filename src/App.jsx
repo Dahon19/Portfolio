@@ -159,7 +159,9 @@ const techIconMap = {
 
 const certificateIcons = {
   "Webinars / Seminars Attended": GraduationCap,
-  "Online Courses Taken": BookOpenText
+  "Online Courses Taken": BookOpenText,
+  "Certifications / Trainings": ShieldCheck,
+  Badges: BookOpenText
 };
 
 function HeadsetIcon(props) {

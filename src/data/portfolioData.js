@@ -30,7 +30,7 @@ export const portfolioData = {
   },
   stats: [
     { label: "Projects", value: "7" },
-    { label: "Learning Records", value: "40" },
+    { label: "Learning Records", value: "50" },
     { label: "Focus", value: "IT Systems" }
   ],
   skills: [
@@ -205,6 +205,47 @@ export const portfolioData = {
   ],
   certificates: [
     {
+      title: "Computer Systems Servicing",
+      date: "July 3, 2024",
+      type: "Certifications / Trainings",
+      location: "TESDA",
+      preview: certificatePreview("computer-systems-servicing.webp")
+    },
+    {
+      title: "Oplan Paskong Sigurado",
+      date: "May 29, 2026",
+      type: "Webinars / Seminars Attended",
+      location: "Google Drive shortcut"
+    },
+    {
+      title: "Data Analytics and Visualization Essentials",
+      date: "January 19, 2026",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("data-analytics-visualization-essentials.webp")
+    },
+    {
+      title: "Cloud and DevOps Basics",
+      date: "January 8, 2026",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("cloud-devops-basics.webp")
+    },
+    {
+      title: "AI-Alam: Enhancing Academic Excellence Through Proper AI Tool Usage",
+      date: "November 21, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Microsoft Teams",
+      preview: certificatePreview("ai-alam-proper-ai-tool-usage.webp")
+    },
+    {
+      title: "Step-by-Step Roadmap to Land Data Analyst Role",
+      date: "December 27, 2025",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("data-analyst-roadmap.webp")
+    },
+    {
       title: "Smart Moves: How AI Can Power Your Studies, Work, and Future",
       date: "December 17, 2025",
       type: "Webinars / Seminars Attended",
@@ -231,6 +272,12 @@ export const portfolioData = {
       type: "Webinars / Seminars Attended",
       location: "DICT Region V / Zoom and Facebook Live",
       preview: certificatePreview("ai-design-creativity-speed-style.webp")
+    },
+    {
+      title: "Batch 2 of Hour of Code: Learn AI & Coding the Fun Way!",
+      date: "December 4, 2025",
+      type: "Webinars / Seminars Attended",
+      location: "Google Drive shortcut"
     },
     {
       title: "Hour of Code Session under the AI SmartCT",
@@ -483,6 +530,27 @@ export const portfolioData = {
       type: "Online Courses Taken",
       location: "Code.org",
       preview: certificatePreview("minecraft-hour-of-code.webp")
+    },
+    {
+      title: "Hardware and Upgrade Support Badge",
+      date: "December 17, 2025",
+      type: "Badges",
+      location: "Cisco Networking Academy",
+      preview: certificatePreview("hardware-upgrade-support-badge.webp")
+    },
+    {
+      title: "Computer Hardware Basics Badge",
+      date: "December 9, 2025",
+      type: "Badges",
+      location: "Cisco Networking Academy",
+      preview: certificatePreview("computer-hardware-basics-badge.webp")
+    },
+    {
+      title: "Introduction to Modern AI Badge",
+      date: "December 8, 2025",
+      type: "Badges",
+      location: "Cisco Networking Academy",
+      preview: certificatePreview("modern-ai-badge.webp")
     }
   ],
   resume: {
