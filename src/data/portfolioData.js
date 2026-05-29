@@ -169,7 +169,7 @@ export const portfolioData = {
       certificateLevel: "NCII",
       date: "July 3, 2024",
       type: "Certifications / Trainings",
-      location: "TESDA"
+      location: "International School of Skills and Excellence"
     },
     {
       title: "Oplan Paskong Sigurado",
