@@ -1,4 +1,6 @@
 export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 }) {
+  const isCredentialGroup = title === "Certifications / Trainings";
+
   return (
     <article className="certificate-group" data-reveal style={{ "--delay": `${delay}ms` }}>
       <div className="certificate-group__header">
@@ -16,11 +18,11 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
       <div className="certificate-group__grid">
         {certificates.map((certificate, index) => (
           <div
-            className="certificate-card"
+            className={`certificate-card${isCredentialGroup ? " certificate-card--credential" : ""}`}
             key={`${certificate.title}-${certificate.date}`}
             style={{ "--delay": `${index * 35}ms` }}
           >
-            {certificate.preview ? (
+            {certificate.preview && !isCredentialGroup ? (
               <img
                 src={certificate.preview}
                 alt={`${certificate.title} sanitized certificate preview`}
@@ -30,7 +32,11 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
             ) : (
               <span className="certificate-card__marker" aria-hidden="true" />
             )}
-            <strong>{certificate.title}</strong>
+            <strong>
+              {isCredentialGroup && certificate.certificateLevel
+                ? `${certificate.title} - ${certificate.certificateLevel}`
+                : certificate.title}
+            </strong>
             <small>{certificate.date}</small>
             <span>{certificate.location}</span>
           </div>

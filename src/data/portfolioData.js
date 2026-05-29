@@ -166,10 +166,10 @@ export const portfolioData = {
   certificates: [
     {
       title: "Computer Systems Servicing",
+      certificateLevel: "NCII",
       date: "July 3, 2024",
       type: "Certifications / Trainings",
-      location: "TESDA",
-      preview: certificatePreview("computer-systems-servicing.webp")
+      location: "TESDA"
     },
     {
       title: "Oplan Paskong Sigurado",
