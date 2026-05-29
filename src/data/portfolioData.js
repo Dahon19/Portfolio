@@ -529,7 +529,9 @@ export const portfolioData = {
     ]
   },
   contact: {
+    email: "rodagregado19@gmail.com",
+    phone: "09770317480",
     note:
-      "Private contact details are intentionally excluded from this public version. Please reach out through the application channel, recruiter contact path, or a resume request."
+      "For professional inquiries, IT instruction opportunities, technical support roles, or junior development work, you may contact me through the details provided here."
   }
 };

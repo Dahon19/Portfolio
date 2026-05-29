@@ -9,6 +9,7 @@ This portfolio was prepared as a public-safe build based on local `SysProjects` 
 - Sanitized certificate summaries grouped by relevance
 - Sanitized certificate preview thumbnails generated from all relevant certificate files in the Drive certificate folders
 - A contact section layout without private personal contact details
+- Public contact details explicitly approved for the portfolio: `rodagregado19@gmail.com` and `09770317480`
 
 ## What was excluded for privacy
 
@@ -16,7 +17,7 @@ This portfolio was prepared as a public-safe build based on local `SysProjects` 
 - API keys, service-role keys, bearer tokens, and database credentials
 - Private local URLs, local admin credentials, and internal-only endpoints
 - Raw certificate files, QR codes, verification links, barcodes, signatures, and certificate numbers
-- Exact home address, private phone numbers, personal IDs, and non-approved personal contact details
+- Exact home address, personal IDs, and non-approved personal contact details
 - Duplicate or less portfolio-relevant project variants
 - Hidden metadata from original project/certificate images by avoiding direct publication of raw certificate assets
 

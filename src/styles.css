@@ -1095,14 +1095,15 @@ textarea {
 
 .projects__grid {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-  align-items: start;
+  align-items: stretch;
 }
 
 .project-card {
   position: relative;
   display: grid;
-  align-content: start;
+  grid-template-rows: auto auto minmax(0, 1fr);
   gap: 1.25rem;
+  height: 100%;
   padding: 1.25rem;
   border-radius: var(--radius-xl);
   border: 1px solid rgba(70, 54, 30, 0.13);
@@ -1206,9 +1207,10 @@ textarea {
 }
 
 .project-card__body {
-  display: grid;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
   gap: 1.15rem;
-  align-content: start;
 }
 
 .project-card__title {
@@ -1296,6 +1298,7 @@ textarea {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid rgba(96, 124, 173, 0.14);
 }
@@ -1514,6 +1517,12 @@ textarea {
   color: #c2d2e4;
 }
 
+.contact-card a {
+  color: #f3dfad;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
 .contact__cta {
   position: relative;
   display: flex;
@@ -1611,6 +1620,10 @@ textarea {
 
   .skills__grid {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .projects__grid {
+    grid-auto-rows: 1fr;
   }
 
   .skill-card,

@@ -7,10 +7,12 @@ import {
   Database,
   GraduationCap,
   Laptop2,
+  Mail,
   MessageSquareMore,
   MonitorCog,
   MonitorSmartphone,
   Network,
+  Phone,
   ShieldCheck,
   Wrench
 } from "lucide-react";
@@ -609,6 +611,20 @@ function ContactSection() {
               <div>
                 <h3>Working style</h3>
                 <p>Structured, user-focused, and practical with clear documentation.</p>
+              </div>
+            </article>
+            <article className="contact-card" data-reveal style={{ "--delay": "240ms" }}>
+              <Mail size={20} />
+              <div>
+                <h3>Email</h3>
+                <a href={`mailto:${portfolioData.contact.email}`}>{portfolioData.contact.email}</a>
+              </div>
+            </article>
+            <article className="contact-card" data-reveal style={{ "--delay": "300ms" }}>
+              <Phone size={20} />
+              <div>
+                <h3>Phone</h3>
+                <a href={`tel:${portfolioData.contact.phone}`}>{portfolioData.contact.phone}</a>
               </div>
             </article>
           </div>
