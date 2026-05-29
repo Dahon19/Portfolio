@@ -1,11 +1,10 @@
-import advancedNetworkingDefensePreview from "../assets/certificate-previews/advanced-networking-defense.webp";
-import aiSocialImpactPreview from "../assets/certificate-previews/ai-social-impact.webp";
-import ciscoPacketTracerPreview from "../assets/certificate-previews/cisco-packet-tracer.webp";
-import computerSystemsServicingPreview from "../assets/certificate-previews/computer-systems-servicing.webp";
-import decipherAiWorkforcePreview from "../assets/certificate-previews/decipher-ai-workforce.webp";
-import designThinkingMobileWireframingPreview from "../assets/certificate-previews/design-thinking-mobile-wireframing.webp";
-import hardwareUpgradeSupportPreview from "../assets/certificate-previews/hardware-upgrade-support.webp";
-import uniathenaMasterChatgptPreview from "../assets/certificate-previews/uniathena-master-chatgpt.webp";
+const certificatePreviewModules = import.meta.glob("../assets/certificate-previews/*.webp", {
+  eager: true,
+  import: "default"
+});
+
+const certificatePreview = (fileName) =>
+  certificatePreviewModules[`../assets/certificate-previews/${fileName}`];
 
 export const portfolioData = {
   profile: {
@@ -31,7 +30,7 @@ export const portfolioData = {
   },
   stats: [
     { label: "Projects", value: "7" },
-    { label: "Learning Records", value: "20" },
+    { label: "Learning Records", value: "41" },
     { label: "Focus", value: "IT Systems" }
   ],
   skills: [
@@ -206,132 +205,291 @@ export const portfolioData = {
   ],
   certificates: [
     {
-      title: "Design Thinking and Mobile App Wireframing",
-      date: "December 11, 2025",
+      title: "Computer Systems Servicing",
+      date: "July 3, 2024",
+      type: "Certifications / Trainings",
+      location: "TESDA",
+      preview: certificatePreview("computer-systems-servicing.webp")
+    },
+    {
+      title: "Smart Moves: How AI Can Power Your Studies, Work, and Future",
+      date: "December 17, 2025",
       type: "Webinars / Seminars Attended",
       location: "Online",
-      preview: designThinkingMobileWireframingPreview
+      preview: certificatePreview("smart-moves-ai-studies-work-future.webp")
+    },
+    {
+      title: "Design Thinking and Mobile App Wireframing",
+      date: "November 27, 2025",
+      type: "Webinars / Seminars Attended",
+      location: "DICT Region V / Zoom",
+      preview: certificatePreview("design-thinking-mobile-wireframing.webp")
     },
     {
       title: "The Human Side of AI: Ethics, Integrity, and Impact",
-      date: "December 10, 2025",
+      date: "November 29, 2025",
       type: "Webinars / Seminars Attended",
-      location: "Online"
+      location: "DICT Region V / Zoom and Facebook Live",
+      preview: certificatePreview("human-side-ai-ethics-integrity-impact.webp")
     },
     {
       title: "AI x Design: Boost Your Creativity, Speed & Style",
-      date: "December 10, 2025",
+      date: "November 28, 2025",
       type: "Webinars / Seminars Attended",
-      location: "Online"
+      location: "DICT Region V / Zoom and Facebook Live",
+      preview: certificatePreview("ai-design-creativity-speed-style.webp")
     },
     {
       title: "Hour of Code Session under the AI SmartCT",
       date: "November 27, 2025",
       type: "Webinars / Seminars Attended",
-      location: "AI SmartCT"
+      location: "AI SmartCT",
+      preview: certificatePreview("hour-of-code-ai-smartct.webp")
     },
     {
       title: "FreshMedia Fusion: Multimedia Innovation for Future Creative Software Developers",
       date: "November 17, 2024",
       type: "Webinars / Seminars Attended",
-      location: "Online"
+      location: "Online",
+      preview: certificatePreview("freshmedia-fusion.webp")
+    },
+    {
+      title: "The New Era of Marketing: Decoding AI Marketing Automation",
+      date: "November 5, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("ai-marketing-automation.webp")
     },
     {
       title: "Decipher the Code: Challenges and Opportunities of AI Adoption Through the Lens of Multigenerational Workforce",
       date: "November 30, 2025",
       type: "Webinars / Seminars Attended",
       location: "Online",
-      preview: decipherAiWorkforcePreview
+      preview: certificatePreview("decipher-ai-workforce.webp")
     },
     {
-      title: "Master ChatGPT",
-      date: "December 20, 2025",
-      type: "Online Courses Taken",
-      location: "UniAthena",
-      preview: uniathenaMasterChatgptPreview
+      title: "i-ACT4SmartCity: Industry-Academe Congress on Technologies for Smart City",
+      date: "October 16, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Cauayan City, Isabela",
+      preview: certificatePreview("iact4smartcity.webp")
     },
     {
-      title: "Hardware and Upgrade Support",
-      date: "December 17, 2025",
-      type: "Online Courses Taken",
+      title: "How to 3D Model: Fundamentals of 3D Design and Modeling",
+      date: "November 29, 2024",
+      type: "Webinars / Seminars Attended",
       location: "Online",
-      preview: hardwareUpgradeSupportPreview
+      preview: certificatePreview("fundamentals-3d-design-modeling.webp")
+    },
+    {
+      title: "Simplifying Artificial Intelligence for the Next Generation",
+      date: "November 18, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("simplifying-ai-next-generation.webp")
     },
     {
       title: "Linux Fundamentals",
-      date: "December 6, 2024",
-      type: "Online Courses Taken",
-      location: "Online"
+      date: "November 30, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "USAID / Online",
+      preview: certificatePreview("linux-fundamentals.webp")
     },
     {
       title: "Introduction to RAN, 5G, and Open RAN",
-      date: "November 27, 2024",
+      date: "November 23, 2024",
       type: "Webinars / Seminars Attended",
-      location: "Online"
+      location: "USAID / Online",
+      preview: certificatePreview("ran-5g-open-ran.webp")
     },
     {
       title: "Embracing Cyber Security for Tomorrow: Advanced Networking and Defense",
       date: "November 22, 2024",
       type: "Webinars / Seminars Attended",
       location: "Online",
-      preview: advancedNetworkingDefensePreview
+      preview: certificatePreview("advanced-networking-defense.webp")
+    },
+    {
+      title: "Building a Personal Brand in IT",
+      date: "November 20, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("personal-brand-it.webp")
     },
     {
       title: "Data Privacy and Protection in the Digital Age",
       date: "November 7, 2024",
       type: "Webinars / Seminars Attended",
-      location: "Online"
+      location: "Online",
+      preview: certificatePreview("data-privacy-protection-digital-age.webp")
     },
     {
       title: "Cutting-edge Strategies and Innovation in Software Technologies",
       date: "November 8, 2024",
       type: "Webinars / Seminars Attended",
-      location: "Online"
+      location: "Online",
+      preview: certificatePreview("software-technologies-innovation.webp")
     },
     {
       title: "Casting a Safe Line: Women Navigating Phishing Waters",
+      date: "October 18, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Google Meet",
+      preview: certificatePreview("phishing-waters.webp")
+    },
+    {
+      title: "The People-Pleaser Career: A Practical Roadmap for UI/UX Design Field",
       date: "November 30, 2025",
       type: "Webinars / Seminars Attended",
-      location: "Online"
+      location: "Online",
+      preview: certificatePreview("uiux-design-roadmap.webp")
+    },
+    {
+      title: "5G and AI: How 5G Accelerates AI-Powered Technology and Edge Computing",
+      date: "November 30, 2025",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("5g-ai-edge-computing.webp")
+    },
+    {
+      title: "Network Security",
+      date: "December 7, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("network-security.webp")
+    },
+    {
+      title: "Leadership Training",
+      date: "December 7, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("leadership-training.webp")
+    },
+    {
+      title: "Capstone Project Software Quality and Usability",
+      date: "December 7, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("capstone-software-quality-usability.webp")
+    },
+    {
+      title: "Artificial Intelligence Applications in IoT and Its Impact",
+      date: "December 7, 2024",
+      type: "Webinars / Seminars Attended",
+      location: "Online",
+      preview: certificatePreview("ai-applications-iot-impact.webp")
+    },
+    {
+      title: "Master ChatGPT",
+      date: "December 20, 2025",
+      type: "Online Courses Taken",
+      location: "UniAthena",
+      preview: certificatePreview("uniathena-master-chatgpt.webp")
+    },
+    {
+      title: "Hardware and Upgrade Support",
+      date: "December 17, 2025",
+      type: "Online Courses Taken",
+      location: "Cisco Networking Academy",
+      preview: certificatePreview("hardware-upgrade-support.webp")
     },
     {
       title: "Artificial Intelligence for Social Impact",
-      date: "December 11, 2025",
+      date: "December 12, 2025",
       type: "Online Courses Taken",
       location: "ADBI E-Learning",
-      preview: aiSocialImpactPreview
+      preview: certificatePreview("ai-social-impact.webp")
     },
     {
       title: "Computer Hardware Basics",
       date: "December 9, 2025",
       type: "Online Courses Taken",
-      location: "Online"
+      location: "Cisco Networking Academy",
+      preview: certificatePreview("computer-hardware-basics.webp")
     },
     {
       title: "Introduction to Modern AI",
       date: "December 8, 2025",
       type: "Online Courses Taken",
-      location: "Online"
+      location: "Cisco Networking Academy",
+      preview: certificatePreview("introduction-modern-ai.webp")
     },
     {
       title: "Basics of SQL Statements and Indexes",
       date: "December 7, 2025",
       type: "Online Courses Taken",
-      location: "Online"
+      location: "Online",
+      preview: certificatePreview("sql-statements-indexes.webp")
     },
     {
-      title: "Cisco Packet Tracer",
-      date: "December 2, 2025",
-      type: "Online Courses Taken",
-      location: "Cisco",
-      preview: ciscoPacketTracerPreview
-    },
-    {
-      title: "Computer Systems Servicing",
-      date: "November 30, 2025",
+      title: "Basics of Artificial Intelligence",
+      date: "December 7, 2025",
       type: "Online Courses Taken",
       location: "Online",
-      preview: computerSystemsServicingPreview
+      preview: certificatePreview("basics-artificial-intelligence.webp")
+    },
+    {
+      title: "Basics of Artificial Intelligence: Learning Models",
+      date: "December 4, 2025",
+      type: "Online Courses Taken",
+      location: "Online",
+      preview: certificatePreview("ai-learning-models.webp")
+    },
+    {
+      title: "AI for Oceans",
+      date: "November 30, 2025",
+      type: "Online Courses Taken",
+      location: "Code.org",
+      preview: certificatePreview("ai-for-oceans.webp")
+    },
+    {
+      title: "Basics of Machine Learning Algorithms",
+      date: "December 4, 2025",
+      type: "Online Courses Taken",
+      location: "Online",
+      preview: certificatePreview("machine-learning-algorithms.webp")
+    },
+    {
+      title: "AIClass ASEAN",
+      date: "December 4, 2025",
+      type: "Online Courses Taken",
+      location: "AIClass ASEAN",
+      preview: certificatePreview("ai-class-asean.webp")
+    },
+    {
+      title: "Getting Started with Cisco Packet Tracer",
+      date: "December 1, 2025",
+      type: "Online Courses Taken",
+      location: "Cisco Networking Academy",
+      preview: certificatePreview("cisco-packet-tracer.webp")
+    },
+    {
+      title: "Basics of Python",
+      date: "December 2, 2025",
+      type: "Online Courses Taken",
+      location: "Online",
+      preview: certificatePreview("basics-python.webp")
+    },
+    {
+      title: "Web Design",
+      date: "November 30, 2025",
+      type: "Online Courses Taken",
+      location: "FreeCodeCamp",
+      preview: certificatePreview("web-design.webp")
+    },
+    {
+      title: "Course C",
+      date: "November 30, 2025",
+      type: "Online Courses Taken",
+      location: "Code.org",
+      preview: certificatePreview("course-c.webp")
+    },
+    {
+      title: "Minecraft Hour of Code",
+      date: "November 30, 2025",
+      type: "Online Courses Taken",
+      location: "Code.org",
+      preview: certificatePreview("minecraft-hour-of-code.webp")
     }
   ],
   resume: {

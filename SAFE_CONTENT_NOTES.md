@@ -7,7 +7,7 @@ This portfolio was prepared as a public-safe build based on local `SysProjects` 
 - Presentable project summaries only
 - Public-safe skill summaries
 - Sanitized certificate summaries grouped by relevance
-- Sanitized certificate preview thumbnails generated from selected certificate files
+- Sanitized certificate preview thumbnails generated from all relevant certificate files in the Drive certificate folders
 - A contact section layout without private personal contact details
 
 ## What was excluded for privacy
@@ -30,10 +30,11 @@ This portfolio was prepared as a public-safe build based on local `SysProjects` 
 
 ## Certificate handling
 
-- Certificate entries were summarized from folder/file inventory and presented as text
-- Selected certificate previews were cropped, resized, lightly blurred, and masked to hide certificate identifiers, QR codes, verification links, and signature areas
+- Certificate entries were summarized from the Drive folder inventory and readable certificate text where available
+- Certificate previews were cropped, resized, lightly blurred, and masked to hide certificate identifiers, QR codes, verification links, and signature areas
 - Raw Drive files are not published in the portfolio
-- Only IT-relevant entries were included
+- The public portfolio now includes 41 relevant learning records from Trainings, Webinars, and Courses
+- Badge-only duplicates were not published as separate certificate records
 - Categories were normalized into:
   - Seminars/Webinars
   - Online Courses/Trainings
