@@ -1,5 +1,5 @@
-const productionStylesheet = "/portfolio/assets/app-BqvCXp7J.css?v=20260530-lowercase-route";
-const productionEntry = "/portfolio/assets/app-mJuEUeno.js?v=20260530-lowercase-route";
+const productionStylesheet = "/portfolio/assets/app-L_CLi57J.css?v=20260530-cinematic-tech-noir";
+const productionEntry = "/portfolio/assets/app-ltvCbT1V.js?v=20260530-cinematic-tech-noir";
 const devHosts = new Set(["localhost", "127.0.0.1"]);
 
 function loadProductionEntry() {
