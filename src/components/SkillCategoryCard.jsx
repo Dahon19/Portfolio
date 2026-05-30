@@ -1,8 +1,14 @@
 import { BadgeCheck } from "lucide-react";
 
 export function SkillCategoryCard({ icon: Icon, title, items, getItemIcon, delay = 0 }) {
+  const usesLongLabels = title === "Teaching/Communication Skills";
+
   return (
-    <article className="skill-card" data-reveal style={{ "--delay": `${delay}ms` }}>
+    <article
+      className={`skill-card${usesLongLabels ? " skill-card--long-labels" : ""}`}
+      data-reveal
+      style={{ "--delay": `${delay}ms` }}
+    >
       <div className="skill-card__header">
         <span className="skill-card__icon">
           <Icon size={20} />
