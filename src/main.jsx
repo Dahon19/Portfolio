@@ -1,5 +1,5 @@
-const productionStylesheet = "/portfolio/assets/app-DJCoCu-z.css?v=20260530-icon-hover";
-const productionEntry = "/portfolio/assets/app-B6bSmw0L.js?v=20260530-icon-hover";
+const productionStylesheet = "/portfolio/assets/app-vouscofT.css?v=20260530-ui-stabilized";
+const productionEntry = "/portfolio/assets/app-CT2bJ5UQ.js?v=20260530-ui-stabilized";
 const devHosts = new Set(["localhost", "127.0.0.1"]);
 
 function loadProductionEntry() {
