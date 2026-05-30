@@ -3301,6 +3301,157 @@ body {
   border-color: rgba(255, 223, 159, 0.18);
 }
 
+/* Project card consistency: prevent long titles, chips, and details from overflowing. */
+.projects__grid {
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.project-card,
+.project-card:first-child,
+.project-card:nth-child(3n + 1) {
+  display: flex;
+  flex-direction: column;
+  grid-column: auto;
+  grid-template-columns: none;
+  min-width: 0;
+  height: 100%;
+  min-height: 43rem;
+  overflow: hidden;
+}
+
+.project-card * {
+  min-width: 0;
+}
+
+.project-card__preview,
+.project-card:first-child .project-card__preview {
+  flex: 0 0 auto;
+  min-height: 7.6rem;
+  max-height: 7.6rem;
+  align-content: end;
+}
+
+.project-card__preview strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.project-card__top {
+  min-height: 2.35rem;
+}
+
+.project-card__category,
+.project-card__reference {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.project-card__body {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.project-card__title {
+  min-height: 3.35rem;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.project-card__description {
+  min-height: 5.05rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.project-card__meta {
+  display: grid;
+  gap: 0.78rem;
+}
+
+.project-card__stack-group {
+  min-width: 0;
+}
+
+.project-card__stack {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 7.1rem), 1fr));
+}
+
+.stack-chip {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.stack-chip span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.15;
+}
+
+.project-card__details {
+  flex: 1 1 auto;
+  align-content: start;
+}
+
+.project-card__details li,
+.project-card__details p {
+  overflow-wrap: anywhere;
+}
+
+.project-card__details p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.project-card__actions {
+  flex: 0 0 auto;
+  min-height: 3rem;
+}
+
+.project-card__action {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1199px) {
+  .project-card,
+  .project-card:first-child,
+  .project-card:nth-child(3n + 1) {
+    min-height: 0;
+  }
+
+  .project-card__title,
+  .project-card__description {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects__grid {
+    grid-auto-rows: auto;
+  }
+
+  .project-card__preview,
+  .project-card:first-child .project-card__preview {
+    min-height: 6.6rem;
+    max-height: none;
+  }
+
+  .project-card__description,
+  .project-card__details p {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+  }
+}
+
 .button--secondary,
 .button--ghost {
   color: #fff4d7;
