@@ -16,7 +16,7 @@ export function Navbar({ activeSection }) {
           <span className="brand-mark">RA</span>
           <span className="brand-copy">
             <strong>Rod Allen</strong>
-            <small>Software Engineer / IT Instructor</small>
+            <small>IT Instructor / Developer</small>
           </span>
         </a>
         <nav className="site-nav" aria-label="Primary">

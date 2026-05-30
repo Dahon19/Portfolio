@@ -4,9 +4,9 @@ export function Footer() {
       <div className="site-footer__inner">
         <div>
           <p>Rod Allen B. Agregado</p>
-          <small>IT systems, support, and instruction.</small>
+          <small>Applied IT, teaching, and software work.</small>
         </div>
-        <small>Available for teaching, support, and junior software roles.</small>
+        <small>Available for instructor, helpdesk, and junior developer roles.</small>
       </div>
     </footer>
   );

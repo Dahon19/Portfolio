@@ -10,28 +10,28 @@ export const portfolioData = {
   profile: {
     name: "Rod Allen B. Agregado",
     title: "Information Technology Graduate",
-    shortTitle: "IT Graduate | System Developer | Technical Support Learner",
+    shortTitle: "IT Graduate | Systems Developer | Support Specialist",
     tagline:
-      "System development, support, and practical web solutions.",
+      "Practical web solutions, clear documentation, and reliable IT service.",
     intro:
-      "Information Technology graduate with a foundation in computer fundamentals, hardware troubleshooting, software applications, user support, and web development. I build practical systems for real workflow problems.",
+      "BSIT graduate with a foundation in web development, hardware troubleshooting, software applications, and user assistance. I build practical tools for real workflow problems.",
     about:
-      "I am an Information Technology graduate with hands-on experience in system maintenance, hardware support, troubleshooting, and web-based development. My background combines programming, digital tools, academic projects, internship exposure, competitions, seminars, and online courses. I am especially interested in building useful systems and helping users apply technology in an organized way.",
+      "My work combines maintenance, hardware diagnostics, troubleshooting, and web-based development. My background includes programming, digital tools, academic projects, internship exposure, competitions, seminars, and online courses. I focus on useful software, organized workflows, and clear guidance for users.",
     focusAreas: [
-      "System development",
-      "Technical support",
-      "Web application development",
-      "Computer troubleshooting",
+      "Web-based systems",
+      "Helpdesk support",
+      "Frontend workflows",
+      "Hardware diagnostics",
       "Inventory and HR workflows",
-      "Learning technology and digital skills",
-      "User-oriented interface design",
-      "Student and user guidance"
+      "Digital skills training",
+      "User-focused interfaces",
+      "Instructional guidance"
     ]
   },
   stats: [
     { label: "Projects", value: "5" },
-    { label: "Learning Records", value: "50" },
-    { label: "Focus", value: "IT Systems" }
+    { label: "Certificates", value: "50" },
+    { label: "Focus", value: "Applied IT" }
   ],
   skills: [
     {
@@ -48,19 +48,19 @@ export const portfolioData = {
     },
     {
       category: "Technical Support",
-      items: ["Basic troubleshooting", "Technical support", "System setup support", "User assistance", "System maintenance"]
+      items: ["Troubleshooting", "Helpdesk support", "Device setup", "User assistance", "Maintenance tasks"]
     },
     {
       category: "Computer Hardware and Software",
-      items: ["Computer hardware and software", "Hardware installation and maintenance", "Computer troubleshooting", "MS Word", "MS Excel", "PowerPoint"]
+      items: ["PC fundamentals", "Hardware installation", "Software diagnostics", "MS Word", "MS Excel", "PowerPoint"]
     },
     {
       category: "Networking Basics",
-      items: ["Cisco Packet Tracer", "Basic networking", "Network security fundamentals", "Connectivity basics"]
+      items: ["Cisco Packet Tracer", "Network fundamentals", "Network security", "Connectivity checks"]
     },
     {
       category: "Teaching/Communication Skills",
-      items: ["Clear documentation", "Presentation readiness", "Collaborative communication", "Practical guidance", "Continuous learning mindset"]
+      items: ["Documentation", "Presentation readiness", "Team communication", "Practical guidance", "Growth mindset"]
     }
   ],
   projects: [
@@ -69,7 +69,7 @@ export const portfolioData = {
       title: "HRSync: Human Resource Management System",
       category: "Administrative Information System",
       description:
-        "A human resource management system built to organize employee records, attendance workflows, leave handling, documents, and administrative reporting.",
+        "An HR platform for employee records, attendance workflows, leave handling, documents, and administrative reporting.",
       techStack: {
         languages: ["PHP", "JavaScript", "SQL"],
         tools: ["Laravel", "CoreUI", "Bootstrap", "MySQL", "Vite"]
@@ -81,15 +81,15 @@ export const portfolioData = {
         "Reporting, audit visibility, and notification features"
       ],
       contribution:
-        "Developed and refined HR workflows, attendance experiences, and module integrations for a broad administrative system.",
-      reference: "Project summary"
+        "Developed HR workflows, attendance experiences, and module integrations for administrative operations.",
+      reference: "HR workflow overview"
     },
     {
       slug: "edu-web",
       title: "Genesis English Language Academy CMS",
       category: "Education Website and CMS",
       description:
-        "A school website and content management system for public information, announcements, learning resources, gallery content, and role-based administration.",
+        "A school CMS for public information, announcements, learning resources, gallery content, and role-based administration.",
       techStack: {
         languages: ["PHP", "CSS", "SQL", "JavaScript"],
         tools: ["Laravel", "MySQL", "Vite"]
@@ -101,8 +101,8 @@ export const portfolioData = {
         "Gallery, news, events, and inquiry management"
       ],
       contribution:
-        "Built and maintained the CMS structure, public page rendering, and admin-side content management flows.",
-      reference: "Project summary"
+        "Built the CMS structure, public page rendering, and admin content workflows.",
+      reference: "CMS overview"
     },
     {
       slug: "interna",
@@ -122,46 +122,46 @@ export const portfolioData = {
       ],
       contribution:
         "Created the app structure and time-management workflow with a mobile-first experience for internship documentation.",
-      reference: "Project summary"
+      reference: "Mobile app overview"
     },
     {
       slug: "bacmatic",
       title: "SACMATIC: IoT-Based Water Monitoring System for SACDECO Tilapia Hatchery",
       category: "Capstone Project",
       description:
-        "A capstone project focused on monitoring water conditions for tilapia hatchery operations using IoT-oriented hardware and sensor-based tracking.",
+        "An IoT water-monitoring build for tilapia hatchery operations using hardware sensors and microcontroller data handling.",
       techStack: {
         languages: ["C++"],
         tools: ["Arduino", "Arduino IDE", "Sensors"]
       },
       features: [
-        "Sensor-based water monitoring support",
+        "Sensor-based water condition tracking",
         "Microcontroller-driven environmental data handling",
-        "IoT-oriented setup for hatchery monitoring"
+        "IoT-oriented hatchery monitoring"
       ],
       contribution:
-        "Developed the academic capstone solution and worked on the hardware-software setup for monitoring use.",
-      reference: "Academic project"
+        "Developed the capstone solution and configured the hardware-software workflow.",
+      reference: "Academic build"
     },
     {
       slug: "u-turn",
       title: "U-Turn Accident Prevention System",
       category: "Client Project",
       description:
-        "A client-focused project designed to support accident prevention using Arduino-based control, sensor input, and detection components.",
+        "A client project for accident-risk reduction using Arduino control, sensor input, and detection components.",
       techStack: {
         languages: ["C++"],
         tools: ["Arduino", "Arduino IDE", "Sensors"]
       },
       features: [
         "Arduino-based control implementation",
-        "Sensor-assisted detection support",
+        "Sensor-assisted detection",
         "Prevention-oriented hardware logic",
-        "Client-focused embedded system setup"
+        "Embedded setup for client deployment"
       ],
       contribution:
-        "Handled the development setup and implementation support for the embedded project workflow.",
-      reference: "Client project"
+        "Handled setup and implementation for the embedded workflow.",
+      reference: "Client build"
     }
   ],
   certificates: [
@@ -530,24 +530,24 @@ export const portfolioData = {
         title: "Internship / OJT Experience",
         subtitle: "Northeastern College Information Systems / Electronic Data Processing, 2025 to 2026",
         detail:
-          "Assisted in system maintenance and technical support, supported troubleshooting and IT operations, and participated in web and system development tasks."
+          "Assisted with maintenance, troubleshooting, IT operations, and web development tasks."
       }
     ],
     trainings: [
       {
         title: "Relevant Trainings",
-        subtitle: "Seminars, webinars, and online learning in AI, cybersecurity, hardware, networking, and web development",
+        subtitle: "Seminars, webinars, and courses in AI, cybersecurity, hardware, networking, and web development",
         detail:
           "Built supplementary technical knowledge through Cisco Networking Academy, Free Code Camp, institutional seminars, and technology-focused webinars."
       }
     ],
     technical: [
       "Frontend and backend web development",
-      "Computer hardware and software fundamentals",
+      "PC hardware and software fundamentals",
       "Database-backed CRUD systems",
       "Hardware installation and maintenance",
-      "Basic networking",
-      "Technical support and troubleshooting",
+      "Network fundamentals",
+      "Helpdesk troubleshooting",
       "Documentation and structured reporting"
     ],
     soft: [
@@ -556,13 +556,13 @@ export const portfolioData = {
       "Willingness to learn",
       "Process-oriented thinking",
       "Collaboration",
-      "Guiding and helping users"
+      "User guidance"
     ]
   },
   contact: {
     email: "rodagregado19@gmail.com",
     phone: "09770317480",
     note:
-      "For professional inquiries, IT instruction opportunities, technical support roles, or junior development work, you may contact me through the details provided here."
+      "For teaching, support, or junior developer opportunities, contact me through the details provided here."
   }
 };

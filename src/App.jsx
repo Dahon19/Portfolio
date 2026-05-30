@@ -102,26 +102,26 @@ const itemIconMap = {
   "CRUD operations": Database,
   "Database schema design": Database,
   "Data validation": ShieldCheck,
-  "Basic troubleshooting": Wrench,
-  "Technical support": HeadsetIcon,
-  "System setup support": MonitorCog,
+  Troubleshooting: Wrench,
+  "Helpdesk support": HeadsetIcon,
+  "Device setup": MonitorCog,
   "User assistance": MessageSquareMore,
-  "System maintenance": Wrench,
-  "Computer hardware and software": Cpu,
-  "Hardware installation and maintenance": Cpu,
-  "Computer troubleshooting": Wrench,
+  "Maintenance tasks": Wrench,
+  "PC fundamentals": Cpu,
+  "Hardware installation": Cpu,
+  "Software diagnostics": Wrench,
   "MS Word": Laptop2,
   "MS Excel": Laptop2,
   PowerPoint: Laptop2,
   "Cisco Packet Tracer": FaNetworkWired,
-  "Basic networking": Network,
-  "Network security fundamentals": ShieldCheck,
-  "Connectivity basics": Network,
-  "Clear documentation": BookOpenText,
+  "Network fundamentals": Network,
+  "Network security": ShieldCheck,
+  "Connectivity checks": Network,
+  Documentation: BookOpenText,
   "Presentation readiness": GraduationCap,
-  "Collaborative communication": MessageSquareMore,
+  "Team communication": MessageSquareMore,
   "Practical guidance": GraduationCap,
-  "Continuous learning mindset": BookOpenText
+  "Growth mindset": BookOpenText
 };
 
 const techIconMap = {
@@ -321,8 +321,8 @@ function HomeSection({ typedRole, reducedMotion }) {
       <div className="hero__container container">
         <div className="hero__grid">
           <div className="hero__copy" data-reveal>
-            <span className="hero__eyebrow">Software + IT Instruction</span>
-            <p className="hero__kicker">Systems, support, and classroom-ready technical communication</p>
+            <span className="hero__eyebrow">Applied IT + Instruction</span>
+            <p className="hero__kicker">Clear workflows, reliable service, and classroom-ready communication</p>
             <h1 className="hero__title">{portfolioData.profile.name}</h1>
             <p className="hero__role">
               <span className="hero__role-static">BSIT Graduate</span>
@@ -335,15 +335,15 @@ function HomeSection({ typedRole, reducedMotion }) {
             <p className="hero__description">{portfolioData.profile.intro}</p>
 
             <div className="hero__meta-list" aria-label="Primary value areas">
-              <span>Systems</span>
-              <span>Support</span>
+              <span>Build</span>
+              <span>Service</span>
               <span>Instruction</span>
             </div>
 
             <div className="hero__proof" aria-label="Professional focus summary">
-              <span>Concise project summaries</span>
-              <span>Clear technical documentation</span>
-              <span>Practical systems thinking</span>
+              <span>Concise project documentation</span>
+              <span>Readable technical writing</span>
+              <span>Workflow-first thinking</span>
             </div>
 
             <div className="hero__actions">
@@ -390,7 +390,7 @@ function HomeSection({ typedRole, reducedMotion }) {
                 <div className="hero-card__avatar">RA</div>
                 <div>
                   <strong>Current Focus</strong>
-                  <span>System development and technical support</span>
+                  <span>Applied software and IT service</span>
                 </div>
               </div>
               <div className="hero-card__topics">
@@ -399,7 +399,7 @@ function HomeSection({ typedRole, reducedMotion }) {
                 ))}
               </div>
               <p className="hero-card__note">
-                Focused on useful, maintainable systems that are easy for users to understand.
+                Focused on maintainable tools that are easy for users to understand.
               </p>
             </div>
           </aside>
@@ -415,7 +415,7 @@ function AboutSection() {
       <div className="container">
         <SectionHeading
           eyebrow="About"
-          title="Practical IT work with clear systems thinking"
+          title="Practical IT work with clear process thinking"
           subtitle="Academic projects, internship exposure, troubleshooting, and useful software."
           align="left"
         />
@@ -429,10 +429,10 @@ function AboutSection() {
           <div className="about__highlights">
             <article className="highlight-card surface" data-reveal style={{ "--delay": "120ms" }}>
               <span className="highlight-card__label">Current direction</span>
-              <h3>Building useful systems and communicating technology clearly</h3>
+              <h3>Building useful tools and communicating technology clearly</h3>
               <p>
-                My strongest fit is in structured IT work where development,
-                user support, and practical process improvement intersect.
+                My strongest fit is structured IT work where development,
+                user guidance, and process improvement intersect.
               </p>
             </article>
 
@@ -457,7 +457,7 @@ function SkillsSection() {
       <div className="container">
         <SectionHeading
           eyebrow="Skills"
-          title="A balanced foundation across development, support, and instruction"
+          title="A balanced foundation for build, service, and instruction"
           subtitle="Grouped by capability area for quick technical review."
         />
 
@@ -484,7 +484,7 @@ function QualificationSection() {
       <div className="container">
         <SectionHeading
           eyebrow="Qualification"
-          title="Academic background, internship exposure, and continuous learning"
+          title="Academic background, internship exposure, and training"
           subtitle="A concise professional timeline for recruiter review."
           align="left"
         />
@@ -527,7 +527,7 @@ function ProjectsSection() {
       <div className="container">
         <SectionHeading
           eyebrow="Projects"
-          title="Selected systems and technical builds"
+          title="Selected technical projects"
           subtitle="Concise summaries with technologies, features, and contribution scope."
           align="left"
         />
@@ -567,8 +567,8 @@ function CertificatesSection() {
       <div className="container">
         <SectionHeading
           eyebrow="Certificates"
-          title="Learning records grouped for faster review"
-          subtitle="Separated into webinars and seminars attended, and online courses taken."
+          title="Certificates grouped for faster review"
+          subtitle="Separated into webinars, seminars, online courses, and credentials."
           align="left"
         />
 
@@ -596,7 +596,7 @@ function ContactSection() {
           <div className="contact__glow" aria-hidden="true" />
           <div className="contact__copy">
             <span className="contact__eyebrow">Contact</span>
-            <h2>Open to IT instruction, software support, and junior development opportunities.</h2>
+            <h2>Open to teaching, support, and junior developer opportunities.</h2>
             <p>{portfolioData.contact.note}</p>
           </div>
 
@@ -605,7 +605,7 @@ function ContactSection() {
               <GraduationCap size={20} />
               <div>
                 <h3>Open roles</h3>
-                <p>IT instructor, technical support, system development, and entry-level software roles.</p>
+                <p>IT instructor, helpdesk support, systems development, and entry-level software roles.</p>
               </div>
             </article>
             <article className="contact-card" data-reveal style={{ "--delay": "180ms" }}>
