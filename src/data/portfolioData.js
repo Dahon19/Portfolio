@@ -176,7 +176,7 @@ export const portfolioData = {
       date: "May 29, 2026",
       type: "Webinars / Seminars Attended",
       location: "Google Drive",
-      preview: certificatePreview("oplan-paskong-sigurado.svg")
+      preview: certificatePreview("oplan-paskong-sigurado.webp")
     },
     {
       title: "Data Analytics and Visualization Essentials",

@@ -33,6 +33,7 @@ This portfolio was prepared as a public-safe build based on local `SysProjects` 
 
 - Certificate entries were summarized from the Drive folder inventory and readable certificate text where available
 - Certificate previews were cropped, resized, lightly blurred, and masked to hide certificate identifiers, QR codes, verification links, and signature areas
+- `Oplan Paskong Sigurado` uses a cropped preview from the Drive PDF that keeps the certificate body visible while excluding the digital signature area
 - Raw Drive files are not published in the portfolio
 - The public portfolio now includes all 50 visible records from the connected Drive certificate folders, including Trainings, Webinars, Courses, Badges, and shortcut-only entries
 - Shortcut-only entries are included as text records when no downloadable certificate file is exposed by Drive
