@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
+  BadgeCheck,
   BookOpenText,
   Code2,
   Cpu,
@@ -158,6 +159,7 @@ const techIconMap = {
 };
 
 const certificateIcons = {
+  Badges: BadgeCheck,
   "Seminars & Webinars": GraduationCap,
   "Online Courses": BookOpenText,
   Certifications: ShieldCheck
@@ -165,12 +167,12 @@ const certificateIcons = {
 
 const certificateGroupLabels = {
   "Certifications / Trainings": "Certifications",
-  Badges: "Certifications",
+  Badges: "Badges",
   "Webinars / Seminars Attended": "Seminars & Webinars",
   "Online Courses Taken": "Online Courses"
 };
 
-const certificateGroupOrder = ["Certifications", "Seminars & Webinars", "Online Courses"];
+const certificateGroupOrder = ["Certifications", "Badges", "Seminars & Webinars", "Online Courses"];
 
 function HeadsetIcon(props) {
   return <MonitorSmartphone {...props} />;
@@ -587,7 +589,7 @@ function CertificatesSection() {
         <SectionHeading
           eyebrow="Professional Development"
           title="Learning records for technical review"
-          subtitle="Organized into certifications, seminars, webinars, and online courses."
+          subtitle="Organized into certifications, badges, seminars, webinars, and online courses."
           align="left"
         />
 
