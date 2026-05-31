@@ -1411,6 +1411,10 @@ textarea {
   gap: 0.7rem;
 }
 
+.certificate-group--badges .certificate-group__grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr));
+}
+
 .certificate-card {
   position: relative;
   display: grid;
@@ -1441,6 +1445,10 @@ textarea {
   font-size: 1rem;
 }
 
+.certificate-card--badge {
+  grid-template-rows: auto auto auto 1fr;
+}
+
 .certificate-card__preview {
   width: 100%;
   aspect-ratio: 16 / 10.5;
@@ -1451,6 +1459,12 @@ textarea {
   border: 1px solid rgba(70, 54, 30, 0.11);
   background: #f6efe3;
   box-shadow: 0 12px 24px rgba(30, 24, 16, 0.1);
+}
+
+.certificate-card--badge .certificate-card__preview {
+  aspect-ratio: 1;
+  max-width: 4.75rem;
+  margin-bottom: 0.62rem;
 }
 
 .certificate-card__marker {

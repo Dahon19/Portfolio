@@ -159,20 +159,25 @@ const techIconMap = {
 };
 
 const certificateIcons = {
-  Badges: BadgeCheck,
+  "Cisco Badges": BadgeCheck,
   "Seminars & Webinars": GraduationCap,
-  "Online Courses": BookOpenText,
-  Certifications: ShieldCheck
+  "Online Training": BookOpenText,
+  "TESDA Certifications": ShieldCheck
 };
 
 const certificateGroupLabels = {
-  "Certifications / Trainings": "Certifications",
-  Badges: "Badges",
+  "Certifications / Trainings": "TESDA Certifications",
+  Badges: "Cisco Badges",
   "Webinars / Seminars Attended": "Seminars & Webinars",
-  "Online Courses Taken": "Online Courses"
+  "Online Courses Taken": "Online Training"
 };
 
-const certificateGroupOrder = ["Certifications", "Seminars & Webinars", "Online Courses", "Badges"];
+const certificateGroupOrder = [
+  "TESDA Certifications",
+  "Seminars & Webinars",
+  "Online Training",
+  "Cisco Badges"
+];
 
 function HeadsetIcon(props) {
   return <MonitorSmartphone {...props} />;
@@ -589,7 +594,7 @@ function CertificatesSection() {
         <SectionHeading
           eyebrow="Professional Development"
           title="Learning records for technical review"
-          subtitle="Organized into certifications, seminars, webinars, online courses, and badges."
+          subtitle="Organized into TESDA certifications, seminars, online training, and Cisco badges."
           align="left"
         />
 

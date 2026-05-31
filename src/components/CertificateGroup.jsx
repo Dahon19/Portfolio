@@ -1,8 +1,15 @@
 export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 }) {
-  const isCredentialGroup = title === "Certifications";
+  const isCredentialGroup = title === "TESDA Certifications";
+  const isBadgeGroup = title === "Cisco Badges";
 
   return (
-    <article className="certificate-group" data-reveal style={{ "--delay": `${delay}ms` }}>
+    <article
+      className={`certificate-group${isCredentialGroup ? " certificate-group--credential" : ""}${
+        isBadgeGroup ? " certificate-group--badges" : ""
+      }`}
+      data-reveal
+      style={{ "--delay": `${delay}ms` }}
+    >
       <div className="certificate-group__header">
         <div className="certificate-group__title-wrap">
           {Icon ? (
@@ -18,7 +25,9 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
       <div className="certificate-group__grid">
         {certificates.map((certificate, index) => (
           <div
-            className={`certificate-card${isCredentialGroup ? " certificate-card--credential" : ""}`}
+            className={`certificate-card${isCredentialGroup ? " certificate-card--credential" : ""}${
+              isBadgeGroup ? " certificate-card--badge" : ""
+            }`}
             key={`${certificate.title}-${certificate.date}`}
             style={{ "--delay": `${index * 35}ms` }}
           >
