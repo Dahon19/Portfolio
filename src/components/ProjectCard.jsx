@@ -27,14 +27,30 @@ export function ProjectCard({ project, TechIcon, delay = 0, lensLabel = "Project
         </div>
       </div>
 
-      <div className="project-card__top">
-        <span className="project-card__category">{project.category}</span>
-        <span className="project-card__reference">{project.reference}</span>
-      </div>
-
       <div className="project-card__body">
+        <div className="project-card__top">
+          <span className="project-card__category">{project.category}</span>
+          <span className="project-card__reference">{project.reference}</span>
+        </div>
+
         <h3 className="project-card__title" title={project.title}>{project.title}</h3>
         <p className="project-card__description">{project.description}</p>
+
+        <div className="project-card__insights">
+          <div className="project-card__summary">
+            <h4>Contribution</h4>
+            <p>{project.contribution}</p>
+          </div>
+
+          <div className="project-card__details">
+            <h4>Key features</h4>
+            <ul>
+              {visibleFeatures.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
         <div className="project-card__meta">
           <div className="project-card__stack-group">
@@ -53,20 +69,6 @@ export function ProjectCard({ project, TechIcon, delay = 0, lensLabel = "Project
               ) : null}
             </div>
           </div>
-        </div>
-
-        <div className="project-card__summary">
-          <h4>Contribution</h4>
-          <p>{project.contribution}</p>
-        </div>
-
-        <div className="project-card__details">
-          <h4>Key features</h4>
-          <ul>
-            {visibleFeatures.map((feature) => (
-              <li key={feature}>{feature}</li>
-            ))}
-          </ul>
         </div>
 
         <div className="project-card__footer">
