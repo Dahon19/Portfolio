@@ -1,4 +1,4 @@
-export function ProjectCard({ project, TechIcon, delay = 0, lensLabel = "Project" }) {
+export function ProjectCard({ project, TechIcon }) {
   const techStack = [...new Set([...project.techStack.languages, ...project.techStack.tools])];
   const hasPreviewImage = Boolean(project.preview?.src);
   const visibleTechStack = techStack.slice(0, 4);
@@ -6,7 +6,7 @@ export function ProjectCard({ project, TechIcon, delay = 0, lensLabel = "Project
   const visibleFeatures = project.features.slice(0, 3);
 
   return (
-    <article className="project-card" data-lens={lensLabel.toLowerCase()} data-reveal style={{ "--delay": `${delay}ms` }}>
+    <article className="project-card">
       <div className="project-card__preview">
         {hasPreviewImage ? (
           <img
@@ -18,11 +18,10 @@ export function ProjectCard({ project, TechIcon, delay = 0, lensLabel = "Project
         ) : (
           <div className="project-card__preview-empty" aria-hidden="true">
             <strong>Preview pending</strong>
-            <span>{lensLabel}</span>
+            <span>{project.reference}</span>
           </div>
         )}
         <div className="project-card__preview-overlay" aria-hidden="true">
-          <strong>{lensLabel}</strong>
           <span>{project.reference}</span>
         </div>
       </div>

@@ -87,32 +87,6 @@ const quickSnapshotCards = [
   }
 ];
 
-const projectLensLabels = {
-  all: "All work",
-  systems: "Systems",
-  web: "Web",
-  mobile: "Mobile",
-  iot: "IoT"
-};
-
-function getProjectLens(project) {
-  const tools = new Set(project.techStack.tools);
-
-  if (tools.has("Expo") || tools.has("React Native")) {
-    return "mobile";
-  }
-
-  if (tools.has("Arduino") || tools.has("Sensors")) {
-    return "iot";
-  }
-
-  if (/website|cms/i.test(project.category)) {
-    return "web";
-  }
-
-  return "systems";
-}
-
 const qualificationItems = [
   {
     label: "Education",
@@ -603,47 +577,28 @@ function QualificationSection() {
 }
 
 function ProjectsSection() {
-  const [activeProjectLens, setActiveProjectLens] = useState("all");
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  const allProjects = portfolioData.projects;
-  const projectFilterOptions = useMemo(
-    () => Object.entries(projectLensLabels).map(([id, label]) => ({
-      id,
-      label,
-      count:
-        id === "all"
-          ? allProjects.length
-          : allProjects.filter((project) => getProjectLens(project) === id).length
-    })),
-    [allProjects]
-  );
-  const filteredProjects =
-    activeProjectLens === "all"
-      ? allProjects
-      : allProjects.filter((project) => getProjectLens(project) === activeProjectLens);
-  const normalizedProjectIndex = filteredProjects.length
-    ? Math.min(activeProjectIndex, filteredProjects.length - 1)
+  const visibleProjects = portfolioData.projects;
+  const normalizedProjectIndex = visibleProjects.length
+    ? Math.min(activeProjectIndex, visibleProjects.length - 1)
     : 0;
-  const activeProject = filteredProjects[normalizedProjectIndex] ?? null;
-  const activeProjectLensLabel = activeProject
-    ? projectLensLabels[getProjectLens(activeProject)]
-    : "Project";
+  const activeProject = visibleProjects[normalizedProjectIndex] ?? null;
   const activePositionLabel =
-    filteredProjects.length ? String(normalizedProjectIndex + 1).padStart(2, "0") : "00";
+    visibleProjects.length ? String(normalizedProjectIndex + 1).padStart(2, "0") : "00";
 
   useEffect(() => {
-    if (filteredProjects.length && activeProjectIndex > filteredProjects.length - 1) {
+    if (visibleProjects.length && activeProjectIndex > visibleProjects.length - 1) {
       setActiveProjectIndex(0);
     }
-  }, [activeProjectIndex, filteredProjects]);
+  }, [activeProjectIndex, visibleProjects]);
 
   const handleCarouselStep = (direction) => {
-    if (!filteredProjects.length) {
+    if (!visibleProjects.length) {
       return;
     }
 
     const currentIndex = Math.max(normalizedProjectIndex, 0);
-    const nextIndex = (currentIndex + direction + filteredProjects.length) % filteredProjects.length;
+    const nextIndex = (currentIndex + direction + visibleProjects.length) % visibleProjects.length;
 
     setActiveProjectIndex(nextIndex);
   };
@@ -662,33 +617,18 @@ function ProjectsSection() {
           <div className="projects-showcase__header">
             <div className="projects-showcase__copy">
               <span className="projects-showcase__eyebrow">Selected work</span>
-              <h3>Consistent landscape project cards with clear technical context below each preview.</h3>
+              <h3>Landscape project previews with the project details arranged cleanly below.</h3>
               <p>
-                Every project now follows the same structure: a wide landscape preview first,
-                followed by the project details, contribution summary, feature highlights, and
-                stack in a fixed reading order.
+                Use the arrows or the project list below to scan through the work. Each project
+                keeps the same reading order so the preview, description, contribution, features,
+                and stack stay easy to compare.
               </p>
             </div>
 
             <div className="projects-showcase__meta">
-              <div className="projects__filters" role="tablist" aria-label="Project category filters">
-                {projectFilterOptions.map((option) => (
-                  <button
-                    type="button"
-                    key={option.id}
-                    className={`projects__filter${activeProjectLens === option.id ? " is-active" : ""}`}
-                    onClick={() => setActiveProjectLens(option.id)}
-                    aria-pressed={activeProjectLens === option.id}
-                  >
-                    <span>{option.label}</span>
-                    <small>{option.count}</small>
-                  </button>
-                ))}
-              </div>
-
               <div className="projects-showcase__counter" aria-live="polite">
                 <strong>{activePositionLabel}</strong>
-                <span>/ {String(filteredProjects.length).padStart(2, "0")}</span>
+                <span>/ {String(visibleProjects.length).padStart(2, "0")}</span>
               </div>
             </div>
           </div>
@@ -707,10 +647,9 @@ function ProjectsSection() {
 
                 <div className="projects-card-carousel__viewport">
                   <ProjectCard
-                    key={`${activeProjectLens}-${activeProject.slug}`}
+                    key={activeProject.slug}
                     project={activeProject}
                     TechIcon={TechIcon}
-                    lensLabel={activeProjectLensLabel}
                   />
                 </div>
 
@@ -725,9 +664,8 @@ function ProjectsSection() {
               </div>
 
               <div className="projects-rail" role="list" aria-label="Project quick selection">
-                {filteredProjects.map((project, index) => {
+                {visibleProjects.map((project, index) => {
                   const isActive = index === normalizedProjectIndex;
-                  const projectLensLabel = projectLensLabels[getProjectLens(project)];
 
                   return (
                     <button
@@ -742,7 +680,6 @@ function ProjectsSection() {
                         <strong>{project.title}</strong>
                         <span>{project.reference}</span>
                       </span>
-                      <span className="projects-rail__tag">{projectLensLabel}</span>
                     </button>
                   );
                 })}
