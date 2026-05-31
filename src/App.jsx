@@ -85,6 +85,32 @@ const quickSnapshotCards = [
   }
 ];
 
+const projectLensLabels = {
+  all: "All work",
+  systems: "Systems",
+  web: "Web",
+  mobile: "Mobile",
+  iot: "IoT"
+};
+
+function getProjectLens(project) {
+  const tools = new Set(project.techStack.tools);
+
+  if (tools.has("Expo") || tools.has("React Native")) {
+    return "mobile";
+  }
+
+  if (tools.has("Arduino") || tools.has("Sensors")) {
+    return "iot";
+  }
+
+  if (/website|cms/i.test(project.category)) {
+    return "web";
+  }
+
+  return "systems";
+}
+
 const qualificationItems = [
   {
     label: "Education",
@@ -362,10 +388,10 @@ function HomeSection({ typedRole, reducedMotion }) {
         <div className="hero__grid">
           <div className="hero__copy" data-reveal>
             <span className="hero__eyebrow">Applied Technology + Instruction</span>
-            <p className="hero__kicker">Clear workflows, reliable service, and classroom-ready communication</p>
-            <h1 className="hero__title">{portfolioData.profile.name}</h1>
+            <p className="hero__kicker">{portfolioData.profile.name}</p>
+            <h1 className="hero__title">{portfolioData.profile.shortTitle}</h1>
             <p className="hero__role">
-              <span className="hero__role-static">BSIT Graduate</span>
+              <span className="hero__role-static">{portfolioData.profile.tagline}</span>
               <span className="hero__role-divider">|</span>
               <span className="hero__typewriter" aria-live="polite">
                 {typedRole}
@@ -375,15 +401,9 @@ function HomeSection({ typedRole, reducedMotion }) {
             <p className="hero__description">{portfolioData.profile.intro}</p>
 
             <div className="hero__meta-list" aria-label="Primary value areas">
-              <span>Build</span>
-              <span>Service</span>
-              <span>Instruction</span>
-            </div>
-
-            <div className="hero__proof" aria-label="Professional focus summary">
-              <span>Concise project documentation</span>
-              <span>Readable technical writing</span>
-              <span>Workflow-first thinking</span>
+              {portfolioData.profile.focusAreas.slice(0, 3).map((item) => (
+                <span key={item}>{item}</span>
+              ))}
             </div>
 
             <div className="hero__actions">
@@ -396,6 +416,11 @@ function HomeSection({ typedRole, reducedMotion }) {
               <a href="#contact" className="button button--ghost" aria-label="Go to contact section">
                 Contact Me
               </a>
+            </div>
+
+            <div className="hero__availability" aria-label="Current availability">
+              <strong>Open to entry-level opportunities</strong>
+              <span>Best fit for IT instruction, technical support, and junior developer roles.</span>
             </div>
 
             <div className="hero__stats">
@@ -607,10 +632,26 @@ function QualificationSection() {
 }
 
 function ProjectsSection() {
+  const [activeProjectLens, setActiveProjectLens] = useState("all");
   const [featuredProject, ...supportingProjects] = portfolioData.projects;
   const featuredStack = featuredProject
     ? [...new Set([...featuredProject.techStack.languages, ...featuredProject.techStack.tools])]
     : [];
+  const projectFilterOptions = useMemo(
+    () => Object.entries(projectLensLabels).map(([id, label]) => ({
+      id,
+      label,
+      count:
+        id === "all"
+          ? supportingProjects.length
+          : supportingProjects.filter((project) => getProjectLens(project) === id).length
+    })),
+    [supportingProjects]
+  );
+  const filteredProjects =
+    activeProjectLens === "all"
+      ? supportingProjects
+      : supportingProjects.filter((project) => getProjectLens(project) === activeProjectLens);
 
   return (
     <section className="projects section" id="projects">
@@ -668,14 +709,33 @@ function ProjectsSection() {
           </article>
         ) : null}
 
+        <div className="projects__toolbar" data-reveal>
+          <p className="projects__toolbar-copy">Browse the rest by project type.</p>
+          <div className="projects__filters" role="tablist" aria-label="Project category filters">
+            {projectFilterOptions.map((option) => (
+              <button
+                type="button"
+                key={option.id}
+                className={`projects__filter${activeProjectLens === option.id ? " is-active" : ""}`}
+                onClick={() => setActiveProjectLens(option.id)}
+                aria-pressed={activeProjectLens === option.id}
+              >
+                <span>{option.label}</span>
+                <small>{option.count}</small>
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="projects__grid">
-          {supportingProjects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <ProjectCard
               key={project.slug}
               project={project}
               TechIcon={TechIcon}
               index={index + 1}
               delay={index * 80}
+              lensLabel={projectLensLabels[getProjectLens(project)]}
             />
           ))}
         </div>
@@ -742,9 +802,14 @@ function ContactSection() {
         <div className="contact__panel" data-reveal>
           <div className="contact__glow" aria-hidden="true" />
           <div className="contact__copy">
-            <span className="contact__eyebrow">Contact</span>
-            <h2>Open to teaching, support, and junior developer opportunities.</h2>
+            <span className="contact__eyebrow">Let&apos;s Work Together</span>
+            <h2>Need someone who can build, support, and explain technology clearly?</h2>
             <p>{portfolioData.contact.note}</p>
+            <div className="contact__tags" aria-label="Professional fit">
+              <span>Entry-level ready</span>
+              <span>User-focused communication</span>
+              <span>Workflow-minded development</span>
+            </div>
           </div>
 
           <div className="contact__cards">
@@ -779,8 +844,15 @@ function ContactSection() {
           </div>
 
           <div className="contact__cta">
-            <a href="#home" className="button button--secondary" aria-label="Back to top of portfolio">
-              Back to top
+            <a href={`mailto:${portfolioData.contact.email}`} className="button" aria-label="Send email to Rod Allen Agregado">
+              Email Me
+            </a>
+            <a
+              href="#certificates"
+              className="button button--secondary"
+              aria-label="Review certificates and training"
+            >
+              Review Credentials
             </a>
           </div>
         </div>

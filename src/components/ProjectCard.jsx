@@ -1,14 +1,14 @@
 import { ArrowUpRight } from "lucide-react";
 
-export function ProjectCard({ project, TechIcon, delay = 0, index = 0 }) {
+export function ProjectCard({ project, TechIcon, delay = 0, index = 0, lensLabel = "Project" }) {
   const projectNumber = String(index + 1).padStart(2, "0");
   const techStack = [...new Set([...project.techStack.languages, ...project.techStack.tools])];
 
   return (
-    <article className="project-card" data-reveal style={{ "--delay": `${delay}ms` }}>
+    <article className="project-card" data-lens={lensLabel.toLowerCase()} data-reveal style={{ "--delay": `${delay}ms` }}>
       <div className="project-card__preview" aria-hidden="true">
         <span>{projectNumber}</span>
-        <strong>{project.category}</strong>
+        <strong>{lensLabel}</strong>
       </div>
 
       <div className="project-card__top">
