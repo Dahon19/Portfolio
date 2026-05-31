@@ -1,5 +1,5 @@
 export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 }) {
-  const isCredentialGroup = title === "Certifications / Trainings";
+  const isCredentialGroup = title === "Certifications";
 
   return (
     <article className="certificate-group" data-reveal style={{ "--delay": `${delay}ms` }}>
@@ -12,7 +12,7 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
           ) : null}
           <h3>{title}</h3>
         </div>
-        <span>{certificates.length} entries</span>
+        <span>{certificates.length} records</span>
       </div>
 
       <div className="certificate-group__grid">

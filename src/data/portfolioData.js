@@ -12,9 +12,9 @@ export const portfolioData = {
     title: "Information Technology Graduate",
     shortTitle: "IT Graduate | Systems Developer | Support Specialist",
     tagline:
-      "Practical web solutions, clear documentation, and reliable IT service.",
+      "Web solutions, clear documentation, and reliable IT service.",
     intro:
-      "BSIT graduate with a foundation in web development, hardware troubleshooting, software applications, and user assistance. I build practical tools for real workflow problems.",
+      "BSIT graduate with a foundation in web development, hardware troubleshooting, software applications, and user assistance. I build focused tools for real workflow problems.",
     about:
       "My work combines maintenance, hardware diagnostics, troubleshooting, and web-based development. My background includes programming, digital tools, academic projects, internship exposure, competitions, seminars, and online courses. I focus on useful software, organized workflows, and clear guidance for users.",
     focusAreas: [
@@ -29,9 +29,9 @@ export const portfolioData = {
     ]
   },
   stats: [
-    { label: "Projects", value: "5" },
-    { label: "Certificates", value: "50" },
-    { label: "Focus", value: "Applied IT" }
+    { label: "Technical Projects", value: "5" },
+    { label: "Certificates & Badges", value: "50+" },
+    { label: "Internship Experience", value: "1" }
   ],
   skills: [
     {
@@ -60,7 +60,7 @@ export const portfolioData = {
     },
     {
       category: "Teaching/Communication Skills",
-      items: ["Documentation", "Presentation readiness", "Team communication", "Practical guidance", "Growth mindset"]
+      items: ["Documentation", "Presentation readiness", "Team communication", "Learner guidance", "Growth mindset"]
     }
   ],
   projects: [
@@ -535,8 +535,8 @@ export const portfolioData = {
     ],
     trainings: [
       {
-        title: "Relevant Trainings",
-        subtitle: "Seminars, webinars, and courses in AI, cybersecurity, hardware, networking, and web development",
+        title: "Technical Exposure",
+        subtitle: "Courses and events in AI, cybersecurity, hardware, networking, and web development",
         detail:
           "Built supplementary technical knowledge through Cisco Networking Academy, Free Code Camp, institutional seminars, and technology-focused webinars."
       }
@@ -563,6 +563,6 @@ export const portfolioData = {
     email: "rodagregado19@gmail.com",
     phone: "09770317480",
     note:
-      "For teaching, support, or junior developer opportunities, contact me through the details provided here."
+      "For instructor, helpdesk, or junior developer opportunities, contact me through the details provided here."
   }
 };

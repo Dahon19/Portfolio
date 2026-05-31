@@ -120,7 +120,7 @@ const itemIconMap = {
   Documentation: BookOpenText,
   "Presentation readiness": GraduationCap,
   "Team communication": MessageSquareMore,
-  "Practical guidance": GraduationCap,
+  "Learner guidance": GraduationCap,
   "Growth mindset": BookOpenText
 };
 
@@ -158,11 +158,19 @@ const techIconMap = {
 };
 
 const certificateIcons = {
-  "Webinars / Seminars Attended": GraduationCap,
-  "Online Courses Taken": BookOpenText,
-  "Certifications / Trainings": ShieldCheck,
-  Badges: BookOpenText
+  "Seminars & Webinars": GraduationCap,
+  "Online Courses": BookOpenText,
+  Certifications: ShieldCheck
 };
+
+const certificateGroupLabels = {
+  "Certifications / Trainings": "Certifications",
+  Badges: "Certifications",
+  "Webinars / Seminars Attended": "Seminars & Webinars",
+  "Online Courses Taken": "Online Courses"
+};
+
+const certificateGroupOrder = ["Certifications", "Seminars & Webinars", "Online Courses"];
 
 function HeadsetIcon(props) {
   return <MonitorSmartphone {...props} />;
@@ -321,7 +329,7 @@ function HomeSection({ typedRole, reducedMotion }) {
       <div className="hero__container container">
         <div className="hero__grid">
           <div className="hero__copy" data-reveal>
-            <span className="hero__eyebrow">Applied IT + Instruction</span>
+            <span className="hero__eyebrow">Applied Technology + Instruction</span>
             <p className="hero__kicker">Clear workflows, reliable service, and classroom-ready communication</p>
             <h1 className="hero__title">{portfolioData.profile.name}</h1>
             <p className="hero__role">
@@ -351,7 +359,7 @@ function HomeSection({ typedRole, reducedMotion }) {
                 View Projects <ArrowRight size={18} />
               </a>
               <a href="#certificates" className="button button--secondary" aria-label="View certificates">
-                View Certificates
+                View Development
               </a>
               <a href="#contact" className="button button--ghost" aria-label="Go to contact section">
                 Contact Me
@@ -415,7 +423,7 @@ function AboutSection() {
       <div className="container">
         <SectionHeading
           eyebrow="About"
-          title="Practical IT work with clear process thinking"
+          title="Clear technical work with process thinking"
           subtitle="Academic projects, internship exposure, troubleshooting, and useful software."
           align="left"
         />
@@ -457,7 +465,7 @@ function SkillsSection() {
       <div className="container">
         <SectionHeading
           eyebrow="Skills"
-          title="A balanced foundation for build, service, and instruction"
+          title="Competencies for build, service, and instruction"
           subtitle="Grouped by capability area for quick technical review."
         />
 
@@ -483,8 +491,8 @@ function QualificationSection() {
     <section className="timeline section" id="resume">
       <div className="container">
         <SectionHeading
-          eyebrow="Qualification"
-          title="Academic background, internship exposure, and training"
+          eyebrow="Academic Background"
+          title="Education, internship, and technical exposure"
           subtitle="A concise professional timeline for recruiter review."
           align="left"
         />
@@ -550,15 +558,26 @@ function ProjectsSection() {
 
 function CertificatesSection() {
   const groupedCertificates = useMemo(
-    () =>
-      portfolioData.certificates.reduce((groups, item) => {
-        if (!groups[item.type]) {
-          groups[item.type] = [];
+    () => {
+      const groups = portfolioData.certificates.reduce((accumulator, item) => {
+        const groupLabel = certificateGroupLabels[item.type] ?? item.type;
+
+        if (!accumulator[groupLabel]) {
+          accumulator[groupLabel] = [];
         }
 
-        groups[item.type].push(item);
-        return groups;
-      }, {}),
+        accumulator[groupLabel].push(item);
+        return accumulator;
+      }, {});
+      const orderedGroups = certificateGroupOrder
+        .filter((group) => groups[group]?.length)
+        .map((group) => [group, groups[group]]);
+      const extraGroups = Object.entries(groups).filter(
+        ([group]) => !certificateGroupOrder.includes(group)
+      );
+
+      return [...orderedGroups, ...extraGroups];
+    },
     []
   );
 
@@ -566,14 +585,14 @@ function CertificatesSection() {
     <section className="certificates section" id="certificates">
       <div className="container">
         <SectionHeading
-          eyebrow="Certificates"
-          title="Certificates grouped for faster review"
-          subtitle="Separated into webinars, seminars, online courses, and credentials."
+          eyebrow="Professional Development"
+          title="Learning records for technical review"
+          subtitle="Organized into certifications, seminars, webinars, and online courses."
           align="left"
         />
 
         <div className="certificates__grid">
-          {Object.entries(groupedCertificates).map(([group, certificates], index) => (
+          {groupedCertificates.map(([group, certificates], index) => (
             <CertificateGroup
               key={group}
               title={group}
@@ -605,14 +624,14 @@ function ContactSection() {
               <GraduationCap size={20} />
               <div>
                 <h3>Open roles</h3>
-                <p>IT instructor, helpdesk support, systems development, and entry-level software roles.</p>
+                <p>IT instructor, helpdesk support, systems development, and junior software roles.</p>
               </div>
             </article>
             <article className="contact-card" data-reveal style={{ "--delay": "180ms" }}>
               <ArrowRight size={20} />
               <div>
                 <h3>Working style</h3>
-                <p>Structured, user-focused, and practical with clear documentation.</p>
+                <p>Structured, user-focused, and organized with clear documentation.</p>
               </div>
             </article>
             <article className="contact-card" data-reveal style={{ "--delay": "240ms" }}>

@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function ProjectCard({ project, TechIcon, delay = 0, index = 0 }) {
   const projectNumber = String(index + 1).padStart(2, "0");
+  const techStack = [...new Set([...project.techStack.languages, ...project.techStack.tools])];
 
   return (
     <article className="project-card" data-reveal style={{ "--delay": `${delay}ms` }}>
@@ -16,29 +17,15 @@ export function ProjectCard({ project, TechIcon, delay = 0, index = 0 }) {
       </div>
 
       <div className="project-card__body">
-        <h3 className="project-card__title">{project.title}</h3>
+        <h3 className="project-card__title" title={project.title}>{project.title}</h3>
         <p className="project-card__description">{project.description}</p>
 
         <div className="project-card__meta">
           <div className="project-card__stack-group">
-            <h4>Languages</h4>
+            <h4>Tech stack</h4>
             <div className="project-card__stack">
-              {project.techStack.languages.map((item) => (
-                <span className="stack-chip" key={`${project.slug}-lang-${item}`}>
-                  <span className="stack-chip__icon">
-                    <TechIcon name={item} />
-                  </span>
-                  <span>{item}</span>
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="project-card__stack-group">
-            <h4>Tools</h4>
-            <div className="project-card__stack">
-              {project.techStack.tools.map((item) => (
-                <span className="stack-chip" key={`${project.slug}-tool-${item}`}>
+              {techStack.map((item) => (
+                <span className="stack-chip" key={`${project.slug}-stack-${item}`}>
                   <span className="stack-chip__icon">
                     <TechIcon name={item} />
                   </span>
@@ -67,11 +54,11 @@ export function ProjectCard({ project, TechIcon, delay = 0, index = 0 }) {
 
         <div className="project-card__actions">
           <span className="project-card__action">
-            <span>Overview</span>
+            <span>Project Scope</span>
             <ArrowUpRight size={16} />
           </span>
           <span className="project-card__action project-card__action--muted">
-            Public-safe
+            Safe summary
           </span>
         </div>
       </div>
