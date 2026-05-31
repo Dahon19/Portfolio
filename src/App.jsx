@@ -6,6 +6,7 @@ import {
   Code2,
   Cpu,
   Database,
+  BriefcaseBusiness,
   GraduationCap,
   Laptop2,
   Mail,
@@ -58,6 +59,30 @@ const rotatingRoles = [
   "Frontend Developer",
   "Technical Support Specialist",
   "System Developer"
+];
+
+const quickSnapshotCards = [
+  {
+    title: "Best-fit roles",
+    description:
+      "Positioned for entry-level roles where teaching, support, and software work overlap.",
+    items: ["IT instruction", "Helpdesk support", "Junior development"],
+    icon: BriefcaseBusiness
+  },
+  {
+    title: "Working strengths",
+    description:
+      "Most effective in practical systems work that needs clean UI, structure, and user guidance.",
+    items: ["Workflow thinking", "Readable interfaces", "Documentation"],
+    icon: Laptop2
+  },
+  {
+    title: "Proof points",
+    description:
+      "Formal training, project work, and continuing technical study back up the portfolio.",
+    items: ["BSIT graduate", "TESDA NCII", "50+ learning records"],
+    icon: GraduationCap
+  }
 ];
 
 const qualificationItems = [
@@ -424,6 +449,51 @@ function HomeSection({ typedRole, reducedMotion }) {
   );
 }
 
+function SnapshotSection() {
+  return (
+    <section className="snapshot section" id="snapshot">
+      <div className="container">
+        <div className="snapshot__panel surface" data-reveal>
+          <div className="snapshot__intro">
+            <span className="snapshot__eyebrow">Professional Snapshot</span>
+            <h2>What a recruiter should understand in under a minute.</h2>
+            <p>
+              This portfolio is strongest for structured roles that combine software building,
+              technical support, and clear user-facing communication.
+            </p>
+          </div>
+
+          <div className="snapshot__grid">
+            {quickSnapshotCards.map((card, index) => {
+              const Icon = card.icon;
+
+              return (
+                <article
+                  className="snapshot-card"
+                  key={card.title}
+                  data-reveal
+                  style={{ "--delay": `${index * 90}ms` }}
+                >
+                  <div className="snapshot-card__icon" aria-hidden="true">
+                    <Icon size={20} />
+                  </div>
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                  <div className="snapshot-card__list">
+                    {card.items.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function AboutSection() {
   return (
     <section className="about section" id="about">
@@ -537,23 +607,74 @@ function QualificationSection() {
 }
 
 function ProjectsSection() {
+  const [featuredProject, ...supportingProjects] = portfolioData.projects;
+  const featuredStack = featuredProject
+    ? [...new Set([...featuredProject.techStack.languages, ...featuredProject.techStack.tools])]
+    : [];
+
   return (
     <section className="projects section" id="projects">
       <div className="container">
         <SectionHeading
           eyebrow="Projects"
           title="Selected technical projects"
-          subtitle="Concise summaries with technologies, features, and contribution scope."
+          subtitle="Focused on systems, workflow tools, and practical technical implementations."
           align="left"
         />
 
+        {featuredProject ? (
+          <article className="projects-feature surface" data-reveal>
+            <div className="projects-feature__header">
+              <div>
+                <span className="projects-feature__eyebrow">Featured Build</span>
+                <h3>{featuredProject.title}</h3>
+              </div>
+              <span className="projects-feature__reference">{featuredProject.reference}</span>
+            </div>
+
+            <div className="projects-feature__body">
+              <div className="projects-feature__lead">
+                <span className="projects-feature__category">{featuredProject.category}</span>
+                <p>{featuredProject.description}</p>
+
+                <div className="projects-feature__stack" aria-label="Featured project tech stack">
+                  {featuredStack.map((item) => (
+                    <span className="stack-chip" key={`${featuredProject.slug}-featured-${item}`}>
+                      <span className="stack-chip__icon">
+                        <TechIcon name={item} />
+                      </span>
+                      <span>{item}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="projects-feature__details">
+                <div className="projects-feature__block">
+                  <h4>What it handles</h4>
+                  <ul>
+                    {featuredProject.features.map((feature) => (
+                      <li key={feature}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="projects-feature__block">
+                  <h4>Contribution</h4>
+                  <p>{featuredProject.contribution}</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        ) : null}
+
         <div className="projects__grid">
-          {portfolioData.projects.map((project, index) => (
+          {supportingProjects.map((project, index) => (
             <ProjectCard
               key={project.slug}
               project={project}
               TechIcon={TechIcon}
-              index={index}
+              index={index + 1}
               delay={index * 80}
             />
           ))}
@@ -677,6 +798,7 @@ export default function App() {
       <Navbar activeSection={activeSection} />
       <main className="main">
         <HomeSection typedRole={typedRole} reducedMotion={reducedMotion} />
+        <SnapshotSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
