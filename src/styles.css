@@ -4915,16 +4915,16 @@ body {
 
 .project-card__preview {
   position: relative;
-  min-height: 12.5rem;
-  max-height: none;
+  height: 12.5rem;
+  flex-shrink: 0;
   padding: 0;
   border-radius: 1rem;
   overflow: hidden;
+  background: #040a14;
 }
 
 .project-card:first-child .project-card__preview {
-  min-height: 12.5rem;
-  max-height: none;
+  height: 12.5rem;
 }
 
 .project-card__preview::before,
@@ -4933,12 +4933,13 @@ body {
 }
 
 .project-card__preview-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: contain;
-  object-position: center;
-  background-color: #000; /* fallback dark bg for transparent images */
+  object-fit: cover;
+  object-position: center top;
 }
 
 .project-card__preview-overlay {
@@ -4948,12 +4949,22 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    180deg,
+    rgba(4, 10, 20, 0.08) 0%,
+    rgba(4, 10, 20, 0.22) 55%,
+    rgba(4, 10, 20, 0.72) 100%
+  );
   color: #fff;
   transition: background 0.3s ease;
 }
 .project-card:hover .project-card__preview-overlay {
-  background: linear-gradient(180deg, rgba(9, 16, 27, 0.16), rgba(9, 16, 27, 0.84));
+  background: linear-gradient(
+    180deg,
+    rgba(4, 10, 20, 0.04) 0%,
+    rgba(4, 10, 20, 0.12) 50%,
+    rgba(4, 10, 20, 0.55) 100%
+  );
 }
 
 .project-card__preview-overlay span,
@@ -5391,12 +5402,8 @@ body {
 
 .project-card__preview,
 .project-card:first-child .project-card__preview {
-  min-height: 12.25rem;
+  height: 12.5rem;
   border-radius: 0.85rem;
-}
-
-.project-card__preview-image {
-  object-position: top center;
 }
 
 .project-card__preview-empty {
@@ -5430,12 +5437,9 @@ body {
   letter-spacing: 0.04em;
 }
 
-.project-card__preview-overlay {
-  background: linear-gradient(180deg, rgba(8, 14, 22, 0.08), rgba(8, 14, 22, 0.86));
-}
-
 .project-card__preview-overlay span {
   font-size: 1.35rem;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
 }
 
 .project-card__preview-overlay strong {
@@ -5650,7 +5654,7 @@ body {
 
   .project-card__preview,
   .project-card:first-child .project-card__preview {
-    min-height: 10.5rem;
+    height: 10.5rem;
   }
 
   .project-card__title {
