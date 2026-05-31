@@ -21,9 +21,6 @@ export function ProjectCard({ project, TechIcon }) {
             <span>{project.reference}</span>
           </div>
         )}
-        <div className="project-card__preview-overlay" aria-hidden="true">
-          <span>{project.reference}</span>
-        </div>
       </div>
 
       <div className="project-card__body">
