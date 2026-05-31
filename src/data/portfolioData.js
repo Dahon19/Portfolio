@@ -3,8 +3,16 @@ const certificatePreviewModules = import.meta.glob("../assets/certificate-previe
   import: "default"
 });
 
+const projectPreviewModules = import.meta.glob("../assets/project-previews/*.{png,svg}", {
+  eager: true,
+  import: "default"
+});
+
 const certificatePreview = (fileName) =>
   certificatePreviewModules[`../assets/certificate-previews/${fileName}`];
+
+const projectPreview = (fileName) =>
+  projectPreviewModules[`../assets/project-previews/${fileName}`];
 
 export const portfolioData = {
   profile: {
@@ -75,9 +83,9 @@ export const portfolioData = {
         tools: ["Laravel", "CoreUI", "Bootstrap", "MySQL", "Vite"]
       },
       preview: {
-        src: "/previews/hrms-output.svg",
-        alt: "Concept preview of an HR management dashboard with records, reports, and modules.",
-        source: "Concept sketch based on the HRMS build structure"
+        src: projectPreview("hrsync-human-resource-management-system.png"),
+        alt: "Preview of the HRSync human resource management system dashboard.",
+        source: "Project asset from Google Drive"
       },
       features: [
         "Employee, department, and position management",
@@ -100,9 +108,9 @@ export const portfolioData = {
         tools: ["Laravel", "MySQL", "Vite"]
       },
       preview: {
-        src: "/previews/edu-web-output.png",
-        alt: "Classroom-style preview image used for the education website presentation.",
-        source: "Asset from the edu-web repository"
+        src: projectPreview("content-management-system.png"),
+        alt: "Preview of the Genesis English Language Academy content management system.",
+        source: "Project asset from Google Drive"
       },
       features: [
         "Public website for programs, books, events, and contact content",
@@ -125,9 +133,9 @@ export const portfolioData = {
         tools: ["Expo", "React Native", "Expo Router", "Supabase"]
       },
       preview: {
-        src: "/previews/interna-output.png",
-        alt: "Interna app icon representing internship task and progress tracking.",
-        source: "Asset from the interna project set"
+        src: projectPreview("interna-ojt-management-companion.png"),
+        alt: "Preview of the Interna OJT management companion mobile app.",
+        source: "Project asset from Google Drive"
       },
       features: [
         "Time logging and history tracking",
@@ -150,9 +158,9 @@ export const portfolioData = {
         tools: ["Arduino", "Arduino IDE", "Sensors"]
       },
       preview: {
-        src: "/previews/bacmatic-output.svg",
-        alt: "Concept sketch of an IoT water monitoring dashboard and sensor pool view.",
-        source: "Manual concept sketch"
+        src: projectPreview("bacmatic-output.svg"),
+        alt: "Concept sketch of the IoT water monitoring dashboard and sensor pool view.",
+        source: "Local project preview"
       },
       features: [
         "Sensor-based water condition tracking",
@@ -174,9 +182,9 @@ export const portfolioData = {
         tools: ["Arduino", "Arduino IDE", "Sensors"]
       },
       preview: {
-        src: "/previews/u-turn-output.svg",
-        alt: "Concept sketch of a U-turn safety system interface with signal indicators.",
-        source: "Manual concept sketch"
+        src: projectPreview("u-turn-accident-prevention-system.png"),
+        alt: "Preview of the U-Turn accident prevention system project.",
+        source: "Project asset from Google Drive"
       },
       features: [
         "Arduino-based control implementation",
