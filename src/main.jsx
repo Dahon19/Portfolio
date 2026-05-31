@@ -1,5 +1,5 @@
-const productionStylesheet = "/portfolio/assets/app-C801VxxA.css";
-const productionEntry = "/portfolio/assets/app-n__gih-N.js";
+const productionStylesheet = "/portfolio/assets/app-L4VxEolr.css";
+const productionEntry = "/portfolio/assets/app-CCTy3TlW.js";
 const devHosts = new Set(["localhost", "127.0.0.1"]);
 
 function loadProductionEntry() {

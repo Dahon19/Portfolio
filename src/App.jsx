@@ -392,7 +392,6 @@ function HomeSection({ typedRole, reducedMotion }) {
             <h1 className="hero__title">{portfolioData.profile.shortTitle}</h1>
             <p className="hero__role">
               <span className="hero__role-static">{portfolioData.profile.tagline}</span>
-              <span className="hero__role-divider">|</span>
               <span className="hero__typewriter" aria-live="polite">
                 {typedRole}
                 {!reducedMotion ? <span className="hero__cursor" aria-hidden="true" /> : null}
@@ -400,27 +399,13 @@ function HomeSection({ typedRole, reducedMotion }) {
             </p>
             <p className="hero__description">{portfolioData.profile.intro}</p>
 
-            <div className="hero__meta-list" aria-label="Primary value areas">
-              {portfolioData.profile.focusAreas.slice(0, 3).map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-
             <div className="hero__actions">
               <a href="#projects" className="button" aria-label="View portfolio projects">
                 View Projects <ArrowRight size={18} />
               </a>
-              <a href="#certificates" className="button button--secondary" aria-label="View certificates">
-                View Development
-              </a>
               <a href="#contact" className="button button--ghost" aria-label="Go to contact section">
                 Contact Me
               </a>
-            </div>
-
-            <div className="hero__availability" aria-label="Current availability">
-              <strong>Open to entry-level opportunities</strong>
-              <span>Best fit for IT instruction, technical support, and junior developer roles.</span>
             </div>
 
             <div className="hero__stats">
@@ -443,29 +428,11 @@ function HomeSection({ typedRole, reducedMotion }) {
               <div className="hero-card__badge">Profile</div>
               <div className="hero-card__photo-frame">
                 <img
-                      src={profileImageSrc}
-                      alt="Rod Allen B. Agregado portrait"
-                      className="hero-card__photo"
-                    />
+                  src={profileImageSrc}
+                  alt="Rod Allen B. Agregado portrait"
+                  className="hero-card__photo"
+                />
               </div>
-            </div>
-
-            <div className="hero-card hero-card--focus" data-reveal style={{ "--delay": "220ms" }}>
-              <div className="hero-card__identity">
-                <div className="hero-card__avatar">RA</div>
-                <div>
-                  <strong>Current Focus</strong>
-                  <span>Applied software and IT service</span>
-                </div>
-              </div>
-              <div className="hero-card__topics">
-                {portfolioData.profile.focusAreas.slice(0, 6).map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-              <p className="hero-card__note">
-                Focused on maintainable tools that are easy for users to understand.
-              </p>
             </div>
           </aside>
         </div>
@@ -674,6 +641,16 @@ function ProjectsSection() {
             </div>
 
             <div className="projects-feature__body">
+              <div className="projects-feature__visual">
+                <img
+                  src={featuredProject.preview.src}
+                  alt={featuredProject.preview.alt}
+                  className="projects-feature__image"
+                  loading="lazy"
+                />
+                <span className="projects-feature__source">{featuredProject.preview.source}</span>
+              </div>
+
               <div className="projects-feature__lead">
                 <span className="projects-feature__category">{featuredProject.category}</span>
                 <p>{featuredProject.description}</p>

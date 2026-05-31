@@ -6,9 +6,17 @@ export function ProjectCard({ project, TechIcon, delay = 0, index = 0, lensLabel
 
   return (
     <article className="project-card" data-lens={lensLabel.toLowerCase()} data-reveal style={{ "--delay": `${delay}ms` }}>
-      <div className="project-card__preview" aria-hidden="true">
-        <span>{projectNumber}</span>
-        <strong>{lensLabel}</strong>
+      <div className="project-card__preview">
+        <img
+          src={project.preview.src}
+          alt={project.preview.alt}
+          className="project-card__preview-image"
+          loading="lazy"
+        />
+        <div className="project-card__preview-overlay" aria-hidden="true">
+          <span>{projectNumber}</span>
+          <strong>{lensLabel}</strong>
+        </div>
       </div>
 
       <div className="project-card__top">
@@ -58,7 +66,7 @@ export function ProjectCard({ project, TechIcon, delay = 0, index = 0, lensLabel
             <ArrowUpRight size={16} />
           </span>
           <span className="project-card__action project-card__action--muted">
-            Safe summary
+            {project.preview.source}
           </span>
         </div>
       </div>

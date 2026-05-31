@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/app-CCTy3TlW.js","assets/app-L4VxEolr.css"])))=>i.map(i=>d[i]);
+import{_ as o}from"./main-hilVyAy-.js";const e="/portfolio/assets/app-C801VxxA.css",s="/portfolio/assets/app-n__gih-N.js",n=new Set(["localhost","127.0.0.1"]);function r(){if(!document.querySelector(`link[href^="${e.split("?")[0]}"]`)){const t=document.createElement("link");t.rel="stylesheet",t.href=e,document.head.appendChild(t)}return import(s)}n.has(window.location.hostname)?o(()=>import("./app-CCTy3TlW.js"),__vite__mapDeps([0,1])):r();

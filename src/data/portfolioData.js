@@ -74,6 +74,11 @@ export const portfolioData = {
         languages: ["PHP", "JavaScript", "SQL"],
         tools: ["Laravel", "CoreUI", "Bootstrap", "MySQL", "Vite"]
       },
+      preview: {
+        src: "/previews/hrms-output.svg",
+        alt: "Concept preview of an HR management dashboard with records, reports, and modules.",
+        source: "Concept sketch based on the HRMS build structure"
+      },
       features: [
         "Employee, department, and position management",
         "Attendance workflows with kiosk and NFC-ready support",
@@ -93,6 +98,11 @@ export const portfolioData = {
       techStack: {
         languages: ["PHP", "CSS", "SQL", "JavaScript"],
         tools: ["Laravel", "MySQL", "Vite"]
+      },
+      preview: {
+        src: "/previews/edu-web-output.png",
+        alt: "Classroom-style preview image used for the education website presentation.",
+        source: "Asset from the edu-web repository"
       },
       features: [
         "Public website for programs, books, events, and contact content",
@@ -114,6 +124,11 @@ export const portfolioData = {
         languages: ["JavaScript", "TypeScript"],
         tools: ["Expo", "React Native", "Expo Router", "Supabase"]
       },
+      preview: {
+        src: "/previews/interna-output.png",
+        alt: "Interna app icon representing internship task and progress tracking.",
+        source: "Asset from the interna project set"
+      },
       features: [
         "Time logging and history tracking",
         "Report-focused workflow for OJT activity records",
@@ -134,6 +149,11 @@ export const portfolioData = {
         languages: ["C++"],
         tools: ["Arduino", "Arduino IDE", "Sensors"]
       },
+      preview: {
+        src: "/previews/bacmatic-output.svg",
+        alt: "Concept sketch of an IoT water monitoring dashboard and sensor pool view.",
+        source: "Manual concept sketch"
+      },
       features: [
         "Sensor-based water condition tracking",
         "Microcontroller-driven environmental data handling",
@@ -152,6 +172,11 @@ export const portfolioData = {
       techStack: {
         languages: ["C++"],
         tools: ["Arduino", "Arduino IDE", "Sensors"]
+      },
+      preview: {
+        src: "/previews/u-turn-output.svg",
+        alt: "Concept sketch of a U-turn safety system interface with signal indicators.",
+        source: "Manual concept sketch"
       },
       features: [
         "Arduino-based control implementation",
