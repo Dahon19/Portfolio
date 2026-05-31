@@ -1,8 +1,6 @@
 export function ProjectCard({ project, TechIcon, variant = "default" }) {
   const techStack = [...new Set([...project.techStack.languages, ...project.techStack.tools])];
   const hasPreviewImage = Boolean(project.preview?.src);
-  const visibleTechStack = techStack.slice(0, 4);
-  const extraTechCount = Math.max(techStack.length - visibleTechStack.length, 0);
   const visibleFeatures = project.features.slice(0, 3);
   const cardClassName = variant === "showcase" ? "project-card project-card--showcase" : "project-card";
 
@@ -53,7 +51,7 @@ export function ProjectCard({ project, TechIcon, variant = "default" }) {
           <div className="project-card__stack-group">
             <h4>Tech stack</h4>
             <div className="project-card__stack">
-              {visibleTechStack.map((item) => (
+              {techStack.map((item) => (
                 <span className="stack-chip" key={`${project.slug}-stack-${item}`}>
                   <span className="stack-chip__icon">
                     <TechIcon name={item} />
@@ -61,9 +59,6 @@ export function ProjectCard({ project, TechIcon, variant = "default" }) {
                   <span>{item}</span>
                 </span>
               ))}
-              {extraTechCount > 0 ? (
-                <span className="stack-chip stack-chip--count">+{extraTechCount}</span>
-              ) : null}
             </div>
           </div>
         </div>
