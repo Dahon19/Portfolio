@@ -6023,9 +6023,14 @@ body {
 }
 
 /* Project image consistency: keep preview areas square without cropping images. */
+.projects-feature__body {
+  align-items: start !important;
+}
+
 .projects-feature__visual {
   min-height: clamp(16rem, 32vw, 22rem) !important;
-  aspect-ratio: auto !important;
+  aspect-ratio: 16 / 10 !important;
+  align-self: start !important;
 }
 
 .projects-feature__image {
