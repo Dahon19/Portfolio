@@ -3989,3 +3989,367 @@ body {
     transform: none;
   }
 }
+
+/* Recovery polish: reduce density introduced by the previous consistency pass. */
+:root {
+  --container: 1120px;
+  --layout-gap: clamp(1.15rem, 2.4vw, 1.65rem);
+  --card-pad: clamp(1.15rem, 2vw, 1.55rem);
+}
+
+.container,
+.site-header__inner,
+.site-footer__inner {
+  width: min(var(--container), calc(100% - clamp(1.5rem, 5vw, 4rem)));
+}
+
+.section {
+  padding: clamp(4.5rem, 7vw, 6.5rem) 0;
+}
+
+.section-heading {
+  max-width: 700px;
+}
+
+.section-heading__eyebrow,
+.hero__eyebrow,
+.highlight-card__label,
+.timeline__aside-label,
+.project-card__category,
+.project-card__reference,
+.contact__eyebrow,
+.certificate-group__header > span {
+  padding: 0.38rem 0.72rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.section-heading__title {
+  font-size: clamp(2.2rem, 3.4vw, 3.35rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.section-heading__subtitle,
+.hero__description,
+.about__story p,
+.highlight-card p,
+.timeline-item__detail,
+.project-card__description,
+.project-card__details li,
+.project-card__details p,
+.certificate-card span,
+.contact-card p {
+  font-size: clamp(0.96rem, 0.35vw + 0.88rem, 1.02rem);
+  line-height: 1.62;
+}
+
+.hero {
+  min-height: auto;
+  padding: clamp(4.4rem, 7vw, 6.25rem) 0 clamp(4.2rem, 6vw, 5.5rem);
+}
+
+@media (min-width: 980px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+    align-items: center;
+  }
+}
+
+.hero__copy {
+  padding: clamp(1rem, 1.6vw, 1.25rem);
+}
+
+.hero__title {
+  max-width: 11ch;
+  font-size: clamp(3.6rem, 6.2vw, 5.6rem);
+}
+
+.hero__proof {
+  display: none;
+}
+
+.hero__meta-list span {
+  min-height: 2.05rem;
+  padding: 0.45rem 0.72rem;
+}
+
+.stat-tile {
+  min-height: 5.4rem;
+  padding: 0.9rem;
+}
+
+.stat-tile strong {
+  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+}
+
+.hero-card__photo-frame {
+  min-height: 0;
+  aspect-ratio: 4 / 4.7;
+}
+
+.hero-card__topics {
+  gap: 0.45rem;
+}
+
+.hero-card__topics span {
+  padding: 0.48rem 0.62rem;
+  font-size: 0.78rem;
+}
+
+.about__grid {
+  align-items: start;
+}
+
+.about__story,
+.highlight-card {
+  height: auto;
+}
+
+.about__tags {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about__tags span {
+  width: 100%;
+  justify-content: flex-start;
+  border-radius: 0.72rem;
+}
+
+.skills__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 1.1rem;
+}
+
+@media (min-width: 1180px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.skill-card {
+  min-height: 18rem;
+  padding: 1.25rem;
+}
+
+.skill-card__header h3 {
+  font-size: clamp(1.18rem, 1.1vw + 0.95rem, 1.42rem);
+}
+
+.skill-card__items {
+  gap: 0.62rem;
+}
+
+.skill-card__item {
+  min-height: 2.35rem;
+  padding: 0.5rem 0.62rem;
+  font-size: 0.84rem;
+}
+
+.projects__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 25.5rem), 1fr));
+  gap: 1.2rem;
+}
+
+@media (min-width: 1120px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.project-card,
+.project-card:first-child,
+.project-card:nth-child(3n + 1) {
+  min-height: 35rem;
+  padding: 1.25rem;
+}
+
+.project-card__preview,
+.project-card:first-child .project-card__preview {
+  min-height: 5.75rem;
+  max-height: 5.75rem;
+}
+
+.project-card__top {
+  min-height: auto;
+}
+
+.project-card__title {
+  min-height: 3.15rem;
+  font-size: clamp(1.24rem, 1vw + 1rem, 1.55rem);
+  -webkit-line-clamp: 2;
+}
+
+.project-card__description {
+  min-height: 4.65rem;
+}
+
+.project-card__stack {
+  max-height: 5.1rem;
+}
+
+.project-card__details {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.project-card__details li {
+  -webkit-line-clamp: 2;
+}
+
+.project-card__details p {
+  -webkit-line-clamp: 3;
+}
+
+.timeline__layout {
+  align-items: start;
+}
+
+.timeline__main {
+  grid-template-rows: none;
+}
+
+.timeline__aside {
+  height: auto;
+}
+
+.timeline__aside .list-grid span {
+  font-size: 0.9rem;
+}
+
+.certificates__grid {
+  gap: 1.2rem;
+}
+
+.certificate-group {
+  padding: 1.25rem;
+}
+
+.certificate-group__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.certificate-card {
+  display: grid;
+  grid-template-columns: 3.6rem minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  min-height: 5.5rem;
+  gap: 0.16rem 0.7rem;
+  align-items: start;
+  padding: 0.72rem;
+}
+
+.certificate-card__preview {
+  grid-row: 1 / span 3;
+  width: 3.6rem;
+  height: 3.6rem;
+  margin: 0;
+  border-radius: 0.58rem;
+}
+
+.certificate-card__marker {
+  position: relative;
+  left: auto;
+  top: auto;
+  grid-row: 1 / span 3;
+  align-self: start;
+  width: 0.72rem;
+  height: 0.72rem;
+  margin: 0.35rem 0 0 0.15rem;
+}
+
+.certificate-card strong {
+  min-height: 0;
+  font-size: 0.86rem;
+  line-height: 1.28;
+  -webkit-line-clamp: 2;
+}
+
+.certificate-card small,
+.certificate-card span {
+  margin: 0;
+  font-size: 0.74rem;
+}
+
+.certificate-card:not(:has(.certificate-card__preview)) {
+  padding-left: 0.72rem;
+}
+
+.certificate-card--credential {
+  min-height: 5.5rem;
+  padding: 0.72rem;
+}
+
+.contact__panel {
+  min-height: 0;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.contact__copy h2 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  line-height: 1.02;
+}
+
+.contact__cards {
+  gap: 0.8rem;
+}
+
+.contact-card {
+  min-height: 6.8rem;
+  padding: 1rem;
+}
+
+@media (max-width: 900px) {
+  .about__tags,
+  .certificate-group__grid,
+  .project-card__details,
+  .contact__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .project-card:first-child,
+  .project-card:nth-child(3n + 1) {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .container,
+  .site-header__inner,
+  .site-footer__inner {
+    width: min(var(--container), calc(100% - 1.1rem));
+  }
+
+  .section {
+    padding: 3.25rem 0;
+  }
+
+  .hero {
+    padding: 2.4rem 0 3.25rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.85rem, 13vw, 4rem);
+  }
+
+  .hero__meta-list {
+    display: flex;
+  }
+
+  .hero__meta-list span {
+    width: auto;
+  }
+
+  .certificate-card {
+    grid-template-columns: 3.2rem minmax(0, 1fr);
+  }
+
+  .certificate-card__preview {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
