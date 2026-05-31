@@ -1,6 +1,13 @@
+import { useState } from "react";
+
 export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 }) {
   const isCredentialGroup = title === "TESDA Certifications";
   const isBadgeGroup = title === "Cisco Badges";
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const limit = 6;
+  const showToggle = certificates.length > limit;
+  const visibleCertificates = isExpanded ? certificates : certificates.slice(0, limit);
 
   return (
     <article
@@ -23,7 +30,7 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
       </div>
 
       <div className="certificate-group__grid">
-        {certificates.map((certificate, index) => (
+        {visibleCertificates.map((certificate, index) => (
           <div
             className={`certificate-card${isCredentialGroup ? " certificate-card--credential" : ""}${
               isBadgeGroup ? " certificate-card--badge" : ""
@@ -51,6 +58,18 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
           </div>
         ))}
       </div>
+
+      {showToggle && (
+        <div className="certificate-group__footer" style={{ marginTop: "1rem" }}>
+          <button
+            type="button"
+            className="certificate-toggle-btn"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? "Show Less" : `Show All (+${certificates.length - limit} records)`}
+          </button>
+        </div>
+      )}
     </article>
   );
 }

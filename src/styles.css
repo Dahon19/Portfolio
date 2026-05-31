@@ -5930,3 +5930,85 @@ body {
   background: rgba(255, 255, 255, 0.04) !important;
 }
 
+/* UI/UX Consistency Refinements & Layout Fixes */
+
+/* 1. Floating Navbar Edge Spacing */
+.site-header {
+  padding: 0.6rem 1.75rem !important;
+}
+
+/* 2. Skills Grid Row Balancing (Center flow for the 7th item) */
+.skills__grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 1.25rem !important;
+}
+
+.skill-card {
+  flex: 1 1 20rem !important;
+  max-width: 22.5rem !important;
+}
+
+/* 3. Bento Card 3 Mobile Layout Fixing & List Alignments */
+.snapshot-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+@media (max-width: 979px) {
+  .snapshot-card:nth-child(3) {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* 4. Timeline Aside Spacing Refinement */
+.timeline__aside .list-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.8rem !important;
+}
+
+.timeline__aside .list-grid span {
+  padding-left: 1.2rem !important;
+  line-height: 1.4 !important;
+}
+
+.timeline__aside .list-grid span::before {
+  top: 0.55em !important;
+}
+
+/* 5. Certificate Collapse Show More Button */
+.certificate-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.35rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(var(--cinema-gold-rgb), 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: #dec89c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 220ms ease;
+}
+
+.certificate-toggle-btn:hover {
+  background: rgba(var(--cinema-gold-rgb), 0.08);
+  border-color: rgba(var(--cinema-gold-rgb), 0.35);
+  box-shadow: 0 8px 24px rgba(var(--cinema-gold-rgb), 0.15);
+  transform: translateY(-1px);
+}
+
+.certificate-toggle-btn:active {
+  transform: translateY(1px);
+}
+

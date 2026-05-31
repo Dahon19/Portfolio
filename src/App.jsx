@@ -466,11 +466,13 @@ function SnapshotSection() {
                   data-reveal
                   style={{ "--delay": `${index * 90}ms` }}
                 >
-                  <div className="snapshot-card__icon" aria-hidden="true">
-                    <Icon size={20} />
+                  <div className="snapshot-card__content">
+                    <div className="snapshot-card__icon" aria-hidden="true">
+                      <Icon size={20} />
+                    </div>
+                    <h3>{card.title}</h3>
+                    <p>{card.description}</p>
                   </div>
-                  <h3>{card.title}</h3>
-                  <p>{card.description}</p>
                   <div className="snapshot-card__list">
                     {card.items.map((item) => (
                       <span key={item}>{item}</span>
