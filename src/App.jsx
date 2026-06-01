@@ -412,14 +412,23 @@ function HomeSection({ typedRole, reducedMotion }) {
           </div>
 
           <aside className="hero__panel">
-            <div className="hero-card hero-card--portrait" data-reveal style={{ "--delay": "120ms" }}>
-              <div className="hero-card__badge">Profile</div>
-              <div className="hero-card__photo-frame">
-                <img
-                  src={profileImageSrc}
-                  alt="Rod Allen B. Agregado portrait"
-                  className="hero-card__photo"
-                />
+            <div className="hero__portrait-stage" data-reveal style={{ "--delay": "120ms" }}>
+              <div className="hero__portrait-backdrop" aria-hidden="true">
+                <img src={profileImageSrc} alt="" />
+              </div>
+              <div className="hero__portrait-light hero__portrait-light--gold" aria-hidden="true" />
+              <div className="hero__portrait-light hero__portrait-light--blue" aria-hidden="true" />
+              <div className="hero__portrait-lines" aria-hidden="true" />
+
+              <div className="hero-card hero-card--portrait">
+                <div className="hero-card__badge">Profile</div>
+                <div className="hero-card__photo-frame">
+                  <img
+                    src={profileImageSrc}
+                    alt="Rod Allen B. Agregado portrait"
+                    className="hero-card__photo"
+                  />
+                </div>
               </div>
             </div>
           </aside>
@@ -691,7 +700,6 @@ function ProjectsSection() {
           {featuredProject ? (
             <div className="featured-project">
               <div className="featured-project__content">
-                <span>Most Important Project</span>
                 <h4>{featuredProject.title}</h4>
                 <p>{featuredProject.outcome ?? featuredProject.summary}</p>
               </div>

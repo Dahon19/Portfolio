@@ -14,9 +14,19 @@ export function ProjectCard({ project, TechIcon, variant = "default", projectNum
             loading="lazy"
           />
         ) : (
-          <div className="project-card__preview-empty" aria-hidden="true">
-            <strong>Preview pending</strong>
-            <span>{project.reference}</span>
+          <div
+            className="project-card__preview-empty project-card__preview-empty--tech"
+            role="img"
+            aria-label={`Temporary technical placeholder for ${project.title}. No image available yet.`}
+          >
+            <div className="project-card__placeholder-grid" aria-hidden="true" />
+            <div className="project-card__placeholder-orbit" aria-hidden="true" />
+            <div className="project-card__placeholder-node project-card__placeholder-node--one" aria-hidden="true" />
+            <div className="project-card__placeholder-node project-card__placeholder-node--two" aria-hidden="true" />
+            <div className="project-card__placeholder-content">
+              <strong>No Image Available Yet</strong>
+              <span>{project.reference}</span>
+            </div>
           </div>
         )}
       </div>
