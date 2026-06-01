@@ -95,8 +95,6 @@ export const portfolioData = {
       ],
       contribution:
         "Developed HR workflows, attendance experiences, and module integrations for administrative operations.",
-      outcome:
-        "Shows capability in database-backed HR workflows, admin dashboards, reporting, and user-facing process design.",
       reference: "HR workflow overview"
     },
     {
@@ -124,8 +122,6 @@ export const portfolioData = {
       ],
       contribution:
         "Built the CMS structure, public page rendering, and admin content workflows.",
-      outcome:
-        "Shows capability in education content management, public web presentation, and role-based admin updates.",
       reference: "CMS overview"
     },
     {
@@ -153,8 +149,6 @@ export const portfolioData = {
       ],
       contribution:
         "Created the app structure and time-management workflow with a mobile-first experience for internship documentation.",
-      outcome:
-        "Shows capability in mobile workflow planning, OJT tracking, and cloud-backed app structure.",
       reference: "Mobile app overview"
     },
     {
@@ -181,8 +175,6 @@ export const portfolioData = {
       ],
       contribution:
         "Developed the capstone solution and configured the hardware-software workflow.",
-      outcome:
-        "Shows capability in sensor-based monitoring, embedded logic, and capstone documentation.",
       reference: "Academic build"
     },
     {
@@ -210,8 +202,6 @@ export const portfolioData = {
       ],
       contribution:
         "Handled setup and implementation for the embedded workflow.",
-      outcome:
-        "Shows capability in Arduino setup, sensor input, and prevention-oriented hardware logic.",
       reference: "Client build"
     }
   ],
