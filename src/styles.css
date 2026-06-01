@@ -7839,10 +7839,21 @@ body,
 }
 
 .hero__role {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 0.25rem 0.45rem;
+  align-items: start;
   overflow-wrap: anywhere;
+}
+
+.hero__typewriter {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-width: min(18ch, 100%);
+  block-size: 1.55em;
+  line-height: 1.55;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
