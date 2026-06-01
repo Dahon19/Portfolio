@@ -38,37 +38,34 @@ export const portfolioData = {
   },
   stats: [
     { label: "Technical Projects", value: "5" },
-    { label: "Certificates & Badges", value: "50+" },
+    { label: "Certificates", value: "50+" },
     { label: "Internship Experience", value: "1" }
   ],
   skills: [
     {
-      category: "Programming",
-      items: ["PHP", "JavaScript", "C++", "Python", "TypeScript", "SQL"]
+      category: "Frontend Development",
+      technologies: ["HTML", "CSS", "JavaScript", "React", "Vite", "Bootstrap"],
+      competencies: ["Responsive interfaces", "Reusable UI sections", "Portfolio-ready presentation"]
     },
     {
-      category: "Web Development",
-      items: ["HTML", "CSS", "Bootstrap", "Laravel", "React", "Vite", "Responsive UI"]
-    },
-    {
-      category: "Database",
-      items: ["MySQL", "SQL", "CRUD operations", "Database schema design", "Data validation"]
+      category: "Backend / Database",
+      technologies: ["PHP", "Laravel", "SQL", "MySQL", "Supabase"],
+      competencies: ["CRUD workflows", "Schema planning", "Data validation"]
     },
     {
       category: "Technical Support",
-      items: ["Troubleshooting", "Helpdesk support", "Device setup", "User assistance", "Maintenance tasks"]
+      technologies: ["Cisco Packet Tracer", "MS Word", "MS Excel", "PowerPoint"],
+      competencies: ["Troubleshooting", "Device setup", "User assistance", "Maintenance tasks"]
     },
     {
-      category: "Computer Hardware and Software",
-      items: ["PC fundamentals", "Hardware installation", "Software diagnostics", "MS Word", "MS Excel", "PowerPoint"]
+      category: "Teaching & Communication",
+      technologies: [],
+      competencies: ["Documentation", "Presentation readiness", "Team communication", "Learner guidance"]
     },
     {
-      category: "Networking Basics",
-      items: ["Cisco Packet Tracer", "Network fundamentals", "Network security", "Connectivity checks"]
-    },
-    {
-      category: "Teaching/Communication Skills",
-      items: ["Documentation", "Presentation readiness", "Team communication", "Learner guidance", "Growth mindset"]
+      category: "Tools & Workflow",
+      technologies: ["Git", "GitHub", "VS Code", "Expo", "Arduino", "Arduino IDE"],
+      competencies: ["Version control habits", "Project organization", "Hardware-software workflow"]
     }
   ],
   projects: [
@@ -78,6 +75,8 @@ export const portfolioData = {
       category: "Administrative Information System",
       description:
         "An HR platform for employee records, attendance workflows, leave handling, documents, and administrative reporting.",
+      summary:
+        "HR workflow system for employee records, attendance, leave, documents, and reporting.",
       techStack: {
         languages: ["PHP", "JavaScript", "SQL"],
         tools: ["Laravel", "CoreUI", "Bootstrap", "MySQL", "Vite"]
@@ -103,6 +102,8 @@ export const portfolioData = {
       category: "Education Website and CMS",
       description:
         "A school CMS for public information, announcements, learning resources, gallery content, and role-based administration.",
+      summary:
+        "Education CMS for public content, learning resources, announcements, and admin updates.",
       techStack: {
         languages: ["PHP", "CSS", "SQL", "JavaScript"],
         tools: ["Laravel", "MySQL", "Vite"]
@@ -128,6 +129,8 @@ export const portfolioData = {
       category: "Mobile Productivity App",
       description:
         "A mobile productivity app for OJT time management that helps users log activity, monitor hours, and organize internship-related records.",
+      summary:
+        "Mobile OJT companion for time logs, activity records, and internship tracking.",
       techStack: {
         languages: ["JavaScript", "TypeScript"],
         tools: ["Expo", "React Native", "Expo Router", "Supabase"]
@@ -153,6 +156,8 @@ export const portfolioData = {
       category: "Capstone Project",
       description:
         "An IoT water-monitoring build for tilapia hatchery operations using hardware sensors and microcontroller data handling.",
+      summary:
+        "IoT hatchery monitor using sensors and microcontroller-based water condition tracking.",
       techStack: {
         languages: ["C++"],
         tools: ["Arduino", "Arduino IDE", "Sensors"]
@@ -177,6 +182,8 @@ export const portfolioData = {
       category: "Client Project",
       description:
         "A client project for accident-risk reduction using Arduino control, sensor input, and detection components.",
+      summary:
+        "Arduino-based prevention system using sensor input and embedded control logic.",
       techStack: {
         languages: ["C++"],
         tools: ["Arduino", "Arduino IDE", "Sensors"]

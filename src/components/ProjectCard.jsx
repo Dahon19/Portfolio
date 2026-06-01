@@ -1,11 +1,11 @@
-export function ProjectCard({ project, TechIcon, variant = "default" }) {
+export function ProjectCard({ project, TechIcon, variant = "default", projectNumber = "01" }) {
   const techStack = [...new Set([...project.techStack.languages, ...project.techStack.tools])];
   const hasPreviewImage = Boolean(project.preview?.src);
-  const visibleFeatures = project.features.slice(0, 3);
+  const visibleFeatures = project.features.slice(0, 2);
   const cardClassName = variant === "showcase" ? "project-card project-card--showcase" : "project-card";
 
   return (
-    <article className={cardClassName}>
+    <article className={cardClassName} id={`project-${project.slug}`}>
       <div className="project-card__preview">
         {hasPreviewImage ? (
           <img
@@ -23,13 +23,13 @@ export function ProjectCard({ project, TechIcon, variant = "default" }) {
       </div>
 
       <div className="project-card__body">
-        <div className="project-card__top">
-          <span className="project-card__category">{project.category}</span>
+        <div className="project-card__top project-card__top--numbered">
+          <span className="project-card__number">{projectNumber}</span>
           <span className="project-card__reference">{project.reference}</span>
         </div>
 
         <h3 className="project-card__title" title={project.title}>{project.title}</h3>
-        <p className="project-card__description">{project.description}</p>
+        <p className="project-card__description">{project.summary ?? project.description}</p>
 
         <div className="project-card__insights">
           <div className="project-card__summary">
@@ -63,11 +63,20 @@ export function ProjectCard({ project, TechIcon, variant = "default" }) {
           </div>
         </div>
 
-        <div className="project-card__footer">
-          <span className="project-card__footer-chip">{project.features.length} feature areas</span>
-          <span className="project-card__footer-chip project-card__footer-chip--muted">
-            {hasPreviewImage ? "Preview ready" : "Preview pending"}
-          </span>
+        <div className="project-card__actions">
+          {hasPreviewImage ? (
+            <a
+              className="project-card__action"
+              href={project.preview.src}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Preview
+            </a>
+          ) : null}
+          <a className="project-card__action project-card__action--muted" href={`#project-${project.slug}`}>
+            View Details
+          </a>
         </div>
       </div>
     </article>

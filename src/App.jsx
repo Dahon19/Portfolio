@@ -57,32 +57,32 @@ import { TimelineItem } from "./components/TimelineItem";
 import { portfolioData } from "./data/portfolioData";
 
 const rotatingRoles = [
-  "IT Instructor",
-  "Frontend Developer",
-  "Technical Support Specialist",
-  "System Developer"
+  "Teaching Support",
+  "Junior Developer",
+  "Technical Support",
+  "Systems Support"
 ];
 
 const quickSnapshotCards = [
   {
     title: "Best-fit roles",
     description:
-      "Positioned for entry-level roles where teaching, support, and software work overlap.",
-    items: ["IT instruction", "Helpdesk support", "Junior development"],
+      "Ready for entry-level roles where teaching, support, and software work overlap.",
+    items: ["Teaching support", "Helpdesk support", "Junior development"],
     icon: BriefcaseBusiness
   },
   {
     title: "Working strengths",
     description:
       "Most effective in practical systems work that needs clean UI, structure, and user guidance.",
-    items: ["Workflow thinking", "Readable interfaces", "Documentation"],
+    items: ["Workflow thinking", "Readable interfaces", "Clear documentation"],
     icon: Laptop2
   },
   {
     title: "Proof points",
     description:
       "Formal training, project work, and continuing technical study back up the portfolio.",
-    items: ["BSIT graduate", "TESDA NCII", "50+ learning records"],
+    items: ["BSIT graduate", "TESDA NCII", "Internship experience"],
     icon: GraduationCap
   }
 ];
@@ -99,17 +99,22 @@ const qualificationItems = [
   {
     label: "Relevant Training",
     ...portfolioData.resume.trainings[0]
+  },
+  {
+    label: "Teaching Readiness",
+    title: "Instruction and learner support",
+    subtitle: "Prepared for IT fundamentals, user guidance, and classroom support",
+    detail:
+      "Combines documentation, presentation readiness, and technical communication for entry-level teaching assistant or IT instruction support."
   }
 ];
 
 const skillIconMap = {
-  Programming: Code2,
-  "Web Development": Laptop2,
-  Database,
+  "Frontend Development": Laptop2,
+  "Backend / Database": Database,
   "Technical Support": ShieldCheck,
-  "Computer Hardware and Software": MonitorSmartphone,
-  "Networking Basics": Network,
-  "Teaching/Communication Skills": MessageSquareMore
+  "Teaching & Communication": MessageSquareMore,
+  "Tools & Workflow": MonitorCog
 };
 
 const itemIconMap = {
@@ -186,24 +191,22 @@ const techIconMap = {
 };
 
 const certificateIcons = {
-  "Cisco Badges": BadgeCheck,
+  Certifications: ShieldCheck,
   "Seminars & Webinars": GraduationCap,
-  "Online Training": BookOpenText,
-  "TESDA Certifications": ShieldCheck
+  "Online Courses": BookOpenText
 };
 
 const certificateGroupLabels = {
-  "Certifications / Trainings": "TESDA Certifications",
-  Badges: "Cisco Badges",
+  "Certifications / Trainings": "Certifications",
+  Badges: "Online Courses",
   "Webinars / Seminars Attended": "Seminars & Webinars",
-  "Online Courses Taken": "Online Training"
+  "Online Courses Taken": "Online Courses"
 };
 
 const certificateGroupOrder = [
-  "TESDA Certifications",
+  "Certifications",
   "Seminars & Webinars",
-  "Online Training",
-  "Cisco Badges"
+  "Online Courses"
 ];
 
 function HeadsetIcon(props) {
@@ -363,9 +366,9 @@ function HomeSection({ typedRole, reducedMotion }) {
       <div className="hero__container container">
         <div className="hero__grid">
           <div className="hero__copy" data-reveal>
-            <span className="hero__eyebrow">Applied Technology + Instruction</span>
+            <span className="hero__eyebrow">Technical Projects + Teaching Readiness</span>
             <p className="hero__kicker">{portfolioData.profile.name}</p>
-            <h1 className="hero__title">{portfolioData.profile.shortTitle}</h1>
+            <h1 className="hero__title">IT Graduate | Teaching Support | Junior Developer | Technical Support</h1>
             <p className="hero__role">
               <span className="hero__role-static">{portfolioData.profile.tagline}</span>
               <span className="hero__typewriter" aria-live="polite">
@@ -512,8 +515,8 @@ function SkillsSection() {
       <div className="container">
         <SectionHeading
           eyebrow="Skills"
-          title="Competencies for build, service, and instruction"
-          subtitle="Grouped by capability area for quick technical review."
+          title="Focused capability areas for entry-level IT work"
+          subtitle="Technologies are separated from competencies so each skill group is easier to scan."
         />
 
         <div className="skills__grid">
@@ -522,7 +525,8 @@ function SkillsSection() {
               key={group.category}
               icon={skillIconMap[group.category] ?? Code2}
               title={group.category}
-              items={group.items}
+              technologies={group.technologies}
+              competencies={group.competencies}
               getItemIcon={(item) => <ItemIcon name={item} />}
               delay={index * 90}
             />
@@ -538,9 +542,9 @@ function QualificationSection() {
     <section className="timeline section" id="resume">
       <div className="container">
         <SectionHeading
-          eyebrow="Academic Background"
-          title="Education, internship, and technical exposure"
-          subtitle="A concise professional timeline for recruiter review."
+          eyebrow="Education & Professional Preparation"
+          title="Academic foundation, internship, and teaching readiness"
+          subtitle="Balanced proof points for entry-level IT, support, and instruction roles."
           align="left"
         />
 
@@ -607,9 +611,9 @@ function ProjectsSection() {
     <section className="projects section" id="projects">
       <div className="container">
         <SectionHeading
-          eyebrow="Projects"
-          title="Project showcase"
-          subtitle="Landscape-first case studies for systems, workflow builds, and practical technical implementations."
+          eyebrow="Technical Projects"
+          title="Project work that shows build, support, and workflow thinking"
+          subtitle="Focused case studies for systems, web tools, mobile workflow, and hardware-assisted solutions."
           align="left"
         />
 
@@ -617,11 +621,10 @@ function ProjectsSection() {
           <div className="projects-showcase__header">
             <div className="projects-showcase__copy">
               <span className="projects-showcase__eyebrow">Selected work</span>
-              <h3>Landscape project previews with the project details arranged cleanly below.</h3>
+              <h3>Project previews with the contribution, features, and stack in one scan path.</h3>
               <p>
-                Use the arrows or the project list below to scan through the work. Each project
-                keeps the same reading order so the preview, description, contribution, features,
-                and stack stay easy to compare.
+                Use the arrows or project list to compare the strongest systems work quickly.
+                Each card keeps the image first, then the project context and role.
               </p>
             </div>
 
@@ -651,6 +654,7 @@ function ProjectsSection() {
                     project={activeProject}
                     TechIcon={TechIcon}
                     variant="showcase"
+                    projectNumber={activePositionLabel}
                   />
                 </div>
 
@@ -698,6 +702,7 @@ function ProjectsSection() {
 }
 
 function CertificatesSection() {
+  const [activeGroup, setActiveGroup] = useState(certificateGroupOrder[0]);
   const groupedCertificates = useMemo(
     () => {
       const groups = portfolioData.certificates.reduce((accumulator, item) => {
@@ -721,27 +726,45 @@ function CertificatesSection() {
     },
     []
   );
+  const activeCertificateGroup =
+    groupedCertificates.find(([group]) => group === activeGroup) ?? groupedCertificates[0];
 
   return (
     <section className="certificates section" id="certificates">
       <div className="container">
         <SectionHeading
           eyebrow="Professional Development"
-          title="Learning records for technical review"
-          subtitle="Organized into TESDA certifications, seminars, online training, and Cisco badges."
+          title="Credentials that support the main portfolio"
+          subtitle="A compact record of certifications, events, and online learning."
           align="left"
         />
 
-        <div className="certificates__grid">
-          {groupedCertificates.map(([group, certificates], index) => (
-            <CertificateGroup
+        <div className="certificates-tabs" role="tablist" aria-label="Professional development categories">
+          {groupedCertificates.map(([group, certificates]) => (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={group === activeCertificateGroup?.[0]}
+              className={`certificates-tabs__button${group === activeCertificateGroup?.[0] ? " is-active" : ""}`}
               key={group}
-              title={group}
-              certificates={certificates}
-              icon={certificateIcons[group]}
-              delay={index * 100}
-            />
+              onClick={() => setActiveGroup(group)}
+            >
+              <span>{group}</span>
+              <small>{certificates.length}</small>
+            </button>
           ))}
+        </div>
+
+        <div className="certificates__grid">
+          {activeCertificateGroup ? (
+            <CertificateGroup
+              key={activeCertificateGroup[0]}
+              title={activeCertificateGroup[0]}
+              certificates={activeCertificateGroup[1]}
+              icon={certificateIcons[activeCertificateGroup[0]]}
+              delay={80}
+            />
+          ) : null}
         </div>
       </div>
     </section>
@@ -756,12 +779,12 @@ function ContactSection() {
           <div className="contact__glow" aria-hidden="true" />
           <div className="contact__copy">
             <span className="contact__eyebrow">Let&apos;s Work Together</span>
-            <h2>Need someone who can build, support, and explain technology clearly?</h2>
+            <h2>Available for entry-level IT, support, teaching assistant, and junior developer roles.</h2>
             <p>{portfolioData.contact.note}</p>
             <div className="contact__tags" aria-label="Professional fit">
-              <span>Entry-level ready</span>
-              <span>User-focused communication</span>
-              <span>Workflow-minded development</span>
+              <span>Teaching readiness</span>
+              <span>Systems support</span>
+              <span>Software development</span>
             </div>
           </div>
 
@@ -798,14 +821,21 @@ function ContactSection() {
 
           <div className="contact__cta">
             <a href={`mailto:${portfolioData.contact.email}`} className="button" aria-label="Send email to Rod Allen Agregado">
-              Email Me
+              Contact Me
             </a>
             <a
-              href="#certificates"
+              href="#resume"
               className="button button--secondary"
-              aria-label="Review certificates and training"
+              aria-label="View resume section"
             >
-              Review Credentials
+              View Resume
+            </a>
+            <a
+              href="#projects"
+              className="button button--ghost"
+              aria-label="View project section"
+            >
+              View Projects
             </a>
           </div>
         </div>

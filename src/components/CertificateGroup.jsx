@@ -1,19 +1,15 @@
 import { useState } from "react";
 
 export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 }) {
-  const isCredentialGroup = title === "TESDA Certifications";
-  const isBadgeGroup = title === "Cisco Badges";
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const limit = 6;
+  const limit = 9;
   const showToggle = certificates.length > limit;
   const visibleCertificates = isExpanded ? certificates : certificates.slice(0, limit);
 
   return (
     <article
-      className={`certificate-group${isCredentialGroup ? " certificate-group--credential" : ""}${
-        isBadgeGroup ? " certificate-group--badges" : ""
-      }`}
+      className="certificate-group"
       data-reveal
       style={{ "--delay": `${delay}ms` }}
     >
@@ -32,13 +28,11 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
       <div className="certificate-group__grid">
         {visibleCertificates.map((certificate, index) => (
           <div
-            className={`certificate-card${isCredentialGroup ? " certificate-card--credential" : ""}${
-              isBadgeGroup ? " certificate-card--badge" : ""
-            }`}
+            className="certificate-card"
             key={`${certificate.title}-${certificate.date}`}
             style={{ "--delay": `${index * 35}ms` }}
           >
-            {certificate.preview && !isCredentialGroup ? (
+            {certificate.preview ? (
               <img
                 src={certificate.preview}
                 alt={`${certificate.title} sanitized certificate preview`}
@@ -49,7 +43,7 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
               <span className="certificate-card__marker" aria-hidden="true" />
             )}
             <strong>
-              {isCredentialGroup && certificate.certificateLevel
+              {certificate.certificateLevel
                 ? `${certificate.title} - ${certificate.certificateLevel}`
                 : certificate.title}
             </strong>
@@ -66,7 +60,7 @@ export function CertificateGroup({ title, certificates, icon: Icon, delay = 0 })
             className="certificate-toggle-btn"
             onClick={() => setIsExpanded(!isExpanded)}
           >
-            {isExpanded ? "Show Less" : `Show All (+${certificates.length - limit} records)`}
+            {isExpanded ? "Show Less" : `Show ${certificates.length - limit} More`}
           </button>
         </div>
       )}
