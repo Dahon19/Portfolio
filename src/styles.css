@@ -8276,3 +8276,49 @@ body,
   }
 }
 
+/* Skill card correction: icon mappings are technology-specific and cards stay equal height. */
+.skills__grid {
+  grid-auto-rows: 1fr !important;
+  align-items: stretch !important;
+}
+
+.skill-card {
+  height: 100% !important;
+  min-height: 21rem !important;
+  grid-template-rows: auto auto 1fr !important;
+}
+
+.skill-card__block:last-child {
+  align-self: start;
+}
+
+@media (min-width: 1181px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .skill-card:nth-child(4) {
+    grid-column: 1 / 2;
+  }
+
+  .skill-card:nth-child(5) {
+    grid-column: 2 / 3;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 641px) {
+  .skill-card {
+    min-height: 21rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills__grid {
+    grid-auto-rows: auto !important;
+  }
+
+  .skill-card {
+    min-height: 0 !important;
+  }
+}
+
